@@ -1,0 +1,927 @@
+<!doctype html>
+<html lang="fr" class="h-full scroll-smooth">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio 2026 | Selyan Boudia</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Nouveau thème "Cyber Green" */
+      --primary: #22c55e; /* Vert éclatant */
+      --secondary: #14b8a6; /* Bleu canard / Sarcelle (Teal) */
+      --accent: #84cc16; /* Vert Lime */
+    }
+
+    * { font-family: 'Space Grotesk', sans-serif; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: rgba(34, 197, 94, 0.4); /* Contour vert au survol */
+      box-shadow: 0 20px 40px -15px rgba(34, 197, 94, 0.2);
+    }
+    
+    .nav-link {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after, .nav-link.active::after {
+      width: 100%;
+    }
+    
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.15;
+      animation: blob 15s ease-in-out infinite;
+    }
+    @keyframes blob {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(60px, -90px) scale(1.2); }
+      66% { transform: translate(-50px, 50px) scale(0.9); }
+    }
+    
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0f; }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom, var(--primary), var(--secondary));
+      border-radius: 10px;
+    }
+
+    .glass-modal {
+      background: rgba(10, 10, 15, 0.98);
+      backdrop-filter: blur(30px);
+    }
+  </style>
+ </head>
+ <body class="h-full bg-[#0a0a0f] text-gray-100 overflow-x-hidden font-light">
+  
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div class="blob w-[600px] h-[600px] bg-green-500/10 top-[-10%] left-[-10%]"></div>
+    <div class="blob w-[500px] h-[500px] bg-teal-600/10 top-1/2 right-[-5%]" style="animation-delay: -3s;"></div>
+  </div>
+
+  <!-- NOUVEAU : CANVAS POUR L'EFFET DE RÉSEAU INTERACTIF -->
+  <canvas id="networkCanvas" class="fixed inset-0 pointer-events-none z-[1] opacity-40"></canvas>
+
+  <div id="app" class="h-full w-full overflow-auto relative z-10">
+    
+    <!-- HEADER -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0f]/80 backdrop-blur-md border-b border-white/5">
+      <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+          <a href="#" onclick="navigateTo('accueil')" class="text-2xl font-black tracking-tighter gradient-text">SB</a>
+          <div class="hidden md:flex items-center gap-10">
+            <a href="#" onclick="navigateTo('accueil')" class="nav-link text-xs font-bold tracking-widest uppercase text-gray-400 active" data-page="accueil">Accueil</a>
+            <a href="#" onclick="navigateTo('apropos')" class="nav-link text-xs font-bold tracking-widest uppercase text-gray-400" data-page="apropos">À Propos</a>
+            <a href="#" onclick="navigateTo('competences')" class="nav-link text-xs font-bold tracking-widest uppercase text-gray-400" data-page="competences">Compétences</a>
+            <a href="#" onclick="navigateTo('projets')" class="nav-link text-xs font-bold tracking-widest uppercase text-gray-400" data-page="projets">Projets</a>
+            <a href="#" onclick="navigateTo('veille')" class="nav-link text-xs font-bold tracking-widest uppercase text-gray-400" data-page="veille">Veille</a>
+            <a href="#" onclick="navigateTo('synthese')" class="nav-link text-xs font-bold tracking-widest uppercase text-gray-400" data-page="synthese">Synthèse</a>
+          </div>
+          <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-white">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
+      </div>
+      <div id="mobileMenu" class="hidden md:hidden bg-[#0a0a0f] border-t border-white/5 px-6 py-8 space-y-4 shadow-2xl">
+          <a href="#" onclick="navigateTo('accueil'); toggleMobileMenu();" class="block text-xl font-bold">Accueil</a>
+          <a href="#" onclick="navigateTo('apropos'); toggleMobileMenu();" class="block text-xl font-bold">À Propos</a>
+          <a href="#" onclick="navigateTo('competences'); toggleMobileMenu();" class="block text-xl font-bold">Compétences</a>
+          <a href="#" onclick="navigateTo('projets'); toggleMobileMenu();" class="block text-xl font-bold">Projets</a>
+          <a href="#" onclick="navigateTo('veille'); toggleMobileMenu();" class="block text-xl font-bold">Veille</a>
+          <a href="#" onclick="navigateTo('synthese'); toggleMobileMenu();" class="block text-xl font-bold">Synthèse</a>
+      </div>
+    </nav>
+
+    <main id="mainContent" class="pt-20">
+      
+      <!-- ACCUEIL -->
+      <section id="page-accueil" class="page min-h-screen flex items-center justify-center">
+        <div class="px-6 text-center reveal active">
+          <div class="mb-10 inline-block px-6 py-2 rounded-full bg-white/5 border border-white/10">
+            <span class="mono text-green-400 text-xs tracking-[0.5em] font-bold uppercase">SISR Specialist</span>
+          </div>
+          <h1 class="text-6xl md:text-8xl lg:text-9xl font-black mb-12 tracking-tighter leading-tight">
+            Bienvenue sur mon <br> <span class="gradient-text italic pr-4">Portfolio 2026</span>
+          </h1>
+          <button onclick="navigateTo('apropos')" class="px-14 py-6 bg-white text-black rounded-full font-black text-xl hover:scale-105 transition-all shadow-2xl active:scale-95">
+              Me découvrir
+          </button>
+        </div>
+      </section>
+
+      <!-- À PROPOS -->
+      <section id="page-apropos" class="page min-h-screen hidden px-6 py-24">
+        <div class="max-w-6xl mx-auto">
+          <header class="mb-24 reveal">
+            <h2 class="text-5xl font-black mb-6 italic tracking-tight"><span class="gradient-text">Immersion.</span></h2>
+            <div class="h-1 w-24 bg-green-400 rounded-full"></div>
+          </header>
+
+          <div class="grid lg:grid-cols-12 gap-20">
+            <!-- Bio & Expériences -->
+            <div class="lg:col-span-7 space-y-12 reveal">
+              <div class="space-y-6">
+                <h3 class="text-4xl font-bold text-white tracking-tight">Moi c'est <span class="gradient-text">Selyan Boudia</span>, 19 ans.</h3>
+                <p class="text-gray-300 text-xl leading-relaxed font-light">
+                    Étudiant en deuxième année de <span class="text-white font-bold underline decoration-green-500 underline-offset-4">BTS SIO option SISR</span>. Mon univers tourne autour de la conception, la sécurisation et l'optimisation des infrastructures qui soutiennent nos échanges numériques.
+                </p>
+                <div class="p-10 rounded-[40px] bg-gradient-to-br from-green-500/10 to-teal-600/5 border border-white/5 shadow-inner">
+                    <h4 class="text-green-400 mono text-xs font-bold uppercase tracking-widest mb-6">Ma vision du réseau</h4>
+                    <p class="text-gray-200 text-2xl font-medium italic leading-snug">
+                        « Le réseau est <span class="text-green-400">l'architecture de l'invisible</span>. J'aime construire les ponts numériques qui permettent aux idées de voyager instantanément. Chaque puzzle logique résolu est une garantie de fluidité. »
+                    </p>
+                </div>
+              </div>
+
+              <!-- Passions -->
+              <div class="space-y-8 pt-6">
+                <h4 class="text-xs font-black uppercase tracking-[0.4em] text-gray-500">Centres d'intérêt</h4>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+                  <div class="p-8 rounded-3xl bg-white/5 border border-white/5 flex flex-col items-center gap-4 transition-transform hover:scale-105">
+                    <span class="text-4xl">🎬</span><span class="text-[10px] font-black uppercase tracking-widest text-gray-400 text-center">Montage Vidéo</span>
+                  </div>
+                  <div class="p-8 rounded-3xl bg-white/5 border border-white/5 flex flex-col items-center gap-4 transition-transform hover:scale-105">
+                    <span class="text-4xl">📚</span><span class="text-[10px] font-black uppercase tracking-widest text-gray-400 text-center">Bande Dessinée</span>
+                  </div>
+                  <div class="p-8 rounded-3xl bg-white/5 border border-white/5 flex flex-col items-center gap-4 transition-transform hover:scale-105">
+                    <span class="text-4xl">🏋️‍♂️</span><span class="text-[10px] font-black uppercase tracking-widest text-gray-400 text-center">Musculation</span>
+                  </div>
+                  <div class="p-8 rounded-3xl bg-white/5 border border-white/5 flex flex-col items-center gap-4 transition-transform hover:scale-105">
+                    <span class="text-4xl">🎮</span><span class="text-[10px] font-black uppercase tracking-widest text-gray-400 text-center">Jeux Vidéo</span>
+                  </div>
+                  <div class="p-8 rounded-3xl bg-white/5 border border-white/5 flex flex-col items-center gap-4 transition-transform hover:scale-105">
+                    <span class="text-4xl">🚀</span><span class="text-[10px] font-black uppercase tracking-widest text-gray-400 text-center">Projets IT</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Side Info -->
+            <div class="lg:col-span-5 space-y-8 sticky top-32 reveal">
+              <div class="card-hover p-12 rounded-[50px] border-green-500/20">
+                <div class="space-y-8">
+                  <div><p class="text-xs font-black text-gray-500 uppercase mb-1">Âge</p><p class="text-3xl font-bold">19 ans</p></div>
+                  <div><p class="text-xs font-black text-gray-500 uppercase mb-1">Localisation</p><p class="text-3xl font-bold">France</p></div>
+                  <div><p class="text-xs font-black text-gray-500 uppercase mb-1">Cursus</p><p class="text-xl font-bold text-green-400 uppercase tracking-tighter">BTS SIO SISR</p></div>
+                  <div><p class="text-xs font-black text-gray-500 uppercase mb-1">Email</p><a href="mailto:selyan.boudia92@gmail.com" class="text-lg md:text-xl font-bold text-white hover:text-green-400 transition-colors break-all">selyan.boudia92@gmail.com</a></div>
+                  <div><p class="text-xs font-black text-gray-500 uppercase mb-1">Téléphone</p><a href="tel:+33778797786" class="text-xl font-bold text-white hover:text-green-400 transition-colors">07 78 79 77 86</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section Expériences -->
+          <div class="mt-32 space-y-24 reveal">
+            <div>
+              <h3 class="text-4xl font-black mb-6 flex items-center gap-4 tracking-tight"><span class="text-green-400">💼</span> Expériences Professionnelles</h3>
+              <p class="text-gray-300 text-lg leading-relaxed font-light mb-10">
+                  Mes expériences s'articulent autour du <strong class="text-green-400">Service aux Organisations</strong> : le <strong class="text-white">Support</strong> (assistance de proximité) et les <strong class="text-white">Projets</strong> (déploiement, digitalisation, audit et sécurité).
+              </p>
+              
+              <div class="grid md:grid-cols-2 gap-8">
+                <!-- Stage 3 -->
+                <div class="card-hover p-8 rounded-[40px] border-green-500/20 bg-green-500/5 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-green-500/20 px-6 py-2 rounded-bl-3xl font-black text-green-400">2026</div>
+                    <div class="mb-6 mt-4">
+                        <span class="px-3 py-1.5 rounded-full bg-green-500/20 text-green-400 text-[10px] font-black uppercase tracking-widest">Stage SLB · Autonomie & Analyse</span>
+                        <h4 class="text-2xl font-bold text-white mt-4">Audit IT & Cybersécurité</h4>
+                        <p class="text-gray-400 text-xs font-bold tracking-widest uppercase mt-2">SLB (Schlumberger)</p>
+                    </div>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li class="flex items-start gap-3"><span class="text-green-400 font-black mt-0.5">▹</span> <span class="leading-relaxed"><strong>Sécurité :</strong> Formations cybersécurité, détection de phishing et comportement en entreprise.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-green-400 font-black mt-0.5">▹</span> <span class="leading-relaxed"><strong>Audit :</strong> Analyse complète d'un réseau de site et rédaction de la documentation technique associée.</span></li>
+                    </ul>
+                </div>
+                <!-- Stage 2 -->
+                <div class="card-hover p-8 rounded-[40px] border-green-500/20 bg-green-500/5 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-green-500/20 px-6 py-2 rounded-bl-3xl font-black text-green-400">2025</div>
+                    <div class="mb-6 mt-4">
+                        <span class="px-3 py-1.5 rounded-full bg-green-500/20 text-green-400 text-[10px] font-black uppercase tracking-widest">Stage SLB · Implication Croissante</span>
+                        <h4 class="text-2xl font-bold text-white mt-4">Digitalisation & Infra</h4>
+                        <p class="text-gray-400 text-xs font-bold tracking-widest uppercase mt-2">SLB (Schlumberger)</p>
+                    </div>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li class="flex items-start gap-3"><span class="text-green-400 font-black mt-0.5">▹</span> <span class="leading-relaxed">Rôle actif dans l'implémentation de la digitalisation des piliers de l'entreprise.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-green-400 font-black mt-0.5">▹</span> <span class="leading-relaxed">Maintien de la continuité opérationnelle des équipes à l'échelle mondiale.</span></li>
+                    </ul>
+                </div>
+                <!-- Stage 1 -->
+                <div class="card-hover p-8 rounded-[40px] border-green-500/20 bg-green-500/5 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-green-500/20 px-6 py-2 rounded-bl-3xl font-black text-green-400">2023-2024</div>
+                    <div class="mb-6 mt-4">
+                        <span class="px-3 py-1.5 rounded-full bg-green-500/20 text-green-400 text-[10px] font-black uppercase tracking-widest">Stage SLB · Intégration</span>
+                        <h4 class="text-2xl font-bold text-white mt-4">Support Opérationnel IT</h4>
+                        <p class="text-gray-400 text-xs font-bold tracking-widest uppercase mt-2">SLB (Schlumberger)</p>
+                    </div>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li class="flex items-start gap-3"><span class="text-green-400 font-black mt-0.5">▹</span> <span class="leading-relaxed">Première intégration en équipe IT pour garantir l'efficacité du SI.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-green-400 font-black mt-0.5">▹</span> <span class="leading-relaxed">Assistance de proximité et compréhension des standards de sécurité.</span></li>
+                    </ul>
+                </div>
+                <!-- Mairie -->
+                <div class="card-hover p-8 rounded-[40px] border-teal-500/20 bg-teal-500/5 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-teal-500/20 px-6 py-2 rounded-bl-3xl font-black text-teal-400">2023</div>
+                    <div class="mb-6 mt-4">
+                        <span class="px-3 py-1.5 rounded-full bg-teal-500/20 text-teal-400 text-[10px] font-black uppercase tracking-widest">Stage Mairie · Support</span>
+                        <h4 class="text-2xl font-bold text-white mt-4">Support Parc Informatique</h4>
+                        <p class="text-gray-400 text-xs font-bold tracking-widest uppercase mt-2">Mairie de Bagneux</p>
+                    </div>
+                    <ul class="space-y-3 text-sm text-gray-300 flex-1">
+                        <li class="flex items-start gap-3"><span class="text-teal-400 font-black mt-0.5">▹</span> <span class="leading-relaxed">Maintien en condition opérationnelle du parc.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-teal-400 font-black mt-0.5">▹</span> <span class="leading-relaxed">Déploiement de postes et résolution d'incidents de premier niveau.</span></li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Diplômes -->
+            <div>
+              <h3 class="text-4xl font-black mb-12 flex items-center gap-4 tracking-tight"><span class="text-teal-400">🎓</span> Diplômes & Formations</h3>
+              <div class="grid md:grid-cols-2 gap-8">
+                <div class="flex items-center gap-6 p-8 rounded-[30px] bg-white/5 border border-white/5 card-hover">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-green-400 to-teal-600 flex items-center justify-center text-xl font-black shadow-lg flex-shrink-0">SIO</div>
+                    <div>
+                        <h4 class="text-xl font-bold text-white mb-1">BTS SIO (Option SISR)</h4>
+                        <p class="text-green-400 text-sm font-bold tracking-widest uppercase mb-1">En cours</p>
+                        <p class="text-gray-500 text-xs font-mono">2024 - 2026</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-6 p-8 rounded-[30px] bg-white/5 border border-white/5 card-hover">
+                    <div class="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center text-xl font-black text-gray-400 border border-white/10 flex-shrink-0">BAC</div>
+                    <div>
+                        <h4 class="text-xl font-bold text-white mb-1">Bac Pro SEN RISC</h4>
+                        <p class="text-gray-400 text-sm font-bold tracking-widest uppercase mb-1">Obtenu · <span class="text-green-400">Mention Très Bien</span></p>
+                        <p class="text-gray-500 text-xs font-mono">2021 - 2024</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-20 pb-10 text-center reveal">
+                <button onclick="navigateTo('competences')" class="px-14 py-6 bg-gradient-to-r from-green-500 to-teal-600 text-white font-black rounded-full shadow-2xl shadow-green-500/20 hover:scale-105 active:scale-95 transition-all text-xl tracking-tight">
+                    Voir mes compétences →
+                </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION COMPÉTENCES -->
+      <section id="page-competences" class="page min-h-screen hidden px-6 py-24">
+        <div class="max-w-7xl mx-auto">
+          <header class="mb-20 reveal">
+            <h2 class="text-6xl font-black mb-6 italic tracking-tight"><span class="gradient-text">Compétences.</span></h2>
+            <p class="text-gray-400 text-xl font-light">Technologies, outils et protocoles que je maîtrise.</p>
+          </header>
+
+          <div class="grid lg:grid-cols-12 gap-16 items-start">
+            
+            <!-- Colonne Gauche : Compétences Clés -->
+            <div class="lg:col-span-7 space-y-6 reveal">
+              <h3 class="text-2xl font-black text-white mb-8 tracking-tight">Compétences clés</h3>
+              
+              <!-- Architecture Réseau -->
+              <div class="card-hover p-8 rounded-[30px] border-green-500/20 bg-green-500/5 flex gap-6 items-start">
+                <div class="w-14 h-14 rounded-2xl bg-green-500/10 flex items-center justify-center flex-shrink-0 text-green-400">
+                   <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+                </div>
+                <div>
+                  <h4 class="text-xl font-bold text-white mb-2">Architecture & Configuration Réseau</h4>
+                  <p class="text-gray-400 leading-relaxed text-sm font-light">Maîtrise du modèle OSI, topologies réseau, création de VLANs, routage inter-VLAN et sertissage RJ45.</p>
+                </div>
+              </div>
+
+              <!-- Systèmes & Services -->
+              <div class="card-hover p-8 rounded-[30px] border-teal-500/20 bg-teal-500/5 flex gap-6 items-start">
+                <div class="w-14 h-14 rounded-2xl bg-teal-500/10 flex items-center justify-center flex-shrink-0 text-teal-400">
+                  <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" /></svg>
+                </div>
+                <div>
+                  <h4 class="text-xl font-bold text-white mb-2">Systèmes & Services</h4>
+                  <p class="text-gray-400 leading-relaxed text-sm font-light">Administration Windows Server (AD, DHCP, DNS), Linux (Debian, Ubuntu), serveurs Web (LAMP), GLPI et LDAP.</p>
+                </div>
+              </div>
+
+              <!-- Cybersécurité & Maintenance -->
+              <div class="card-hover p-8 rounded-[30px] border-green-500/20 bg-green-500/5 flex gap-6 items-start">
+                <div class="w-14 h-14 rounded-2xl bg-green-500/10 flex items-center justify-center flex-shrink-0 text-green-400">
+                  <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                </div>
+                <div>
+                  <h4 class="text-xl font-bold text-white mb-2">Cybersécurité, Conformité & Analyse</h4>
+                  <p class="text-gray-400 leading-relaxed text-sm font-light">Analyse Wireshark, Firewalls, ACL, DMZ, VPN, Fail2ban, sécurisation BYOD, et protection de données (RGPD/PIA).</p>
+                </div>
+              </div>
+
+              <!-- Scripting & Programmation -->
+              <div class="card-hover p-8 rounded-[30px] border-lime-500/20 bg-lime-500/5 flex gap-6 items-start">
+                <div class="w-14 h-14 rounded-2xl bg-lime-500/10 flex items-center justify-center flex-shrink-0 text-lime-400">
+                  <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                </div>
+                <div>
+                  <h4 class="text-xl font-bold text-white mb-2">Scripting & Bases de Données</h4>
+                  <p class="text-gray-400 leading-relaxed text-sm font-light">Automatisation via PowerShell, développement de scripts Python et gestion de bases de données relationnelles (SQL).</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Colonne Droite : Technologies Maîtrisées -->
+            <div class="lg:col-span-5 space-y-12 reveal sticky top-32">
+              <h3 class="text-2xl font-black text-white tracking-tight">Technologies maîtrisées</h3>
+              
+              <div class="space-y-8">
+                  <!-- OS -->
+                  <div>
+                      <h5 class="text-gray-400 font-bold mb-4 tracking-widest uppercase text-xs">Systèmes d'exploitation</h5>
+                      <div class="flex flex-wrap gap-3">
+                          <span class="px-5 py-2.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs font-bold flex items-center gap-2"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg> Windows Server</span>
+                          <span class="px-5 py-2.5 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20 text-xs font-bold flex items-center gap-2"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.187 17.525a1.862 1.862 0 01-1.86-1.864c0-1.026.833-1.861 1.86-1.861a1.862 1.862 0 011.862 1.861 1.862 1.862 0 01-1.862 1.864zm-5.187-5.547a4.981 4.981 0 01-4.978-4.978A4.981 4.981 0 0112 2.022a4.981 4.981 0 014.978 4.978 4.981 4.981 0 01-4.978 4.978zm-5.187 5.547a1.862 1.862 0 01-1.862-1.864c0-1.026.834-1.861 1.862-1.861a1.862 1.862 0 011.861 1.861 1.862 1.862 0 01-1.861 1.864z"/></svg> Ubuntu</span>
+                          <span class="px-5 py-2.5 rounded-full bg-red-500/10 text-red-400 border border-red-500/20 text-xs font-bold">Debian</span>
+                      </div>
+                  </div>
+
+                  <!-- Réseaux & Sécurité -->
+                  <div>
+                      <h5 class="text-gray-400 font-bold mb-4 tracking-widest uppercase text-xs">Réseau & Sécurité</h5>
+                      <div class="flex flex-wrap gap-2">
+                          <span class="px-4 py-2 rounded-xl bg-white/5 text-gray-300 border border-white/10 text-xs font-bold">Modèle OSI / TCP-IP</span>
+                          <span class="px-4 py-2 rounded-xl bg-white/5 text-gray-300 border border-white/10 text-xs font-bold">VLAN & Routage</span>
+                          <span class="px-4 py-2 rounded-xl bg-white/5 text-gray-300 border border-white/10 text-xs font-bold">NAT / ACL / VPN</span>
+                          <span class="px-4 py-2 rounded-xl bg-white/5 text-gray-300 border border-white/10 text-xs font-bold">Wireshark</span>
+                          <span class="px-4 py-2 rounded-xl bg-green-500/10 text-green-400 border border-green-500/20 text-xs font-bold">Fail2ban</span>
+                          <span class="px-4 py-2 rounded-xl bg-green-500/10 text-green-400 border border-green-500/20 text-xs font-bold">Firewall</span>
+                      </div>
+                  </div>
+
+                  <!-- Services infrastructure -->
+                  <div>
+                      <h5 class="text-gray-400 font-bold mb-4 tracking-widest uppercase text-xs">Services d'Infrastructure</h5>
+                      <div class="flex flex-wrap gap-2">
+                          <span class="px-4 py-2 rounded-xl bg-teal-500/10 text-teal-400 border border-teal-500/20 text-xs font-bold">Active Directory</span>
+                          <span class="px-4 py-2 rounded-xl bg-teal-500/10 text-teal-400 border border-teal-500/20 text-xs font-bold">DHCP & DNS</span>
+                          <span class="px-4 py-2 rounded-xl bg-green-500/10 text-green-400 border border-green-500/20 text-xs font-bold">LDAP</span>
+                          <span class="px-4 py-2 rounded-xl bg-green-500/10 text-green-400 border border-green-500/20 text-xs font-bold">GLPI</span>
+                          <span class="px-4 py-2 rounded-xl bg-teal-500/10 text-teal-400 border border-teal-500/20 text-xs font-bold">LAMP (Apache/PHP)</span>
+                      </div>
+                  </div>
+
+                  <!-- Scripting & BDD -->
+                  <div>
+                      <h5 class="text-gray-400 font-bold mb-4 tracking-widest uppercase text-xs">Programmation & Données</h5>
+                      <div class="flex flex-wrap gap-2">
+                          <span class="px-4 py-2 rounded-xl bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 text-xs font-bold flex items-center gap-1"><span class="font-mono font-black">❯_</span> Python</span>
+                          <span class="px-4 py-2 rounded-xl bg-teal-400/10 text-teal-300 border border-teal-400/20 text-xs font-bold flex items-center gap-1"><span class="font-mono font-black">❯_</span> PowerShell</span>
+                          <span class="px-4 py-2 rounded-xl bg-orange-500/10 text-orange-400 border border-orange-500/20 text-xs font-bold">SQL (MySQL/MariaDB)</span>
+                          <span class="px-4 py-2 rounded-xl bg-pink-500/10 text-pink-400 border border-pink-500/20 text-xs font-bold">Conformité RGPD / PIA</span>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Bouton vers Projets -->
+              <div class="pt-8">
+                <button onclick="navigateTo('projets')" class="w-full py-4 bg-white text-black font-black rounded-2xl hover:bg-green-400 transition-colors shadow-lg active:scale-95">
+                    Découvrir mes réalisations
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION PROJETS -->
+      <section id="page-projets" class="page min-h-screen hidden px-6 py-24">
+        <div class="max-w-7xl mx-auto">
+          <header class="mb-20 reveal">
+            <h2 class="text-6xl font-black mb-6 italic tracking-tight"><span class="gradient-text">Projets.</span></h2>
+            <p class="text-gray-400 text-xl font-light">Scénarios pratiques et infrastructures déployées.</p>
+          </header>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+             
+             <!-- P1: Low Code -->
+             <div class="project-card card-hover rounded-[40px] overflow-hidden reveal group">
+               <div class="h-56 bg-[#0d0d14] flex items-center justify-center p-8 relative overflow-hidden">
+                 <div class="absolute inset-0 bg-green-500/5 group-hover:bg-green-500/10 transition-colors"></div>
+                 <svg class="h-32 w-32 relative z-10 transition-transform duration-500 group-hover:scale-110" viewBox="0 0 100 100" fill="none">
+                    <path d="M50 5L10 25V75L50 95L90 75V25L50 5Z" fill="#22c55e" fill-opacity="0.2" stroke="#22c55e" stroke-width="2"/>
+                    <path d="M30 35L50 25L70 35V65L50 75L30 65V35Z" fill="#22c55e"/>
+                 </svg>
+               </div>
+               <div class="p-10">
+                 <h3 class="text-2xl font-bold mb-4 leading-tight">Scan Réseau Low-Code</h3>
+                 <p class="text-gray-400 text-sm mb-8 leading-relaxed">Application mobile simulant un scan réseau via l'écosystème Microsoft Power Platform.</p>
+                 <button onclick="openProjectModal(1)" class="w-full py-4 rounded-2xl bg-white text-black font-black hover:bg-green-400 transition-colors">Détails du projet</button>
+               </div>
+             </div>
+
+             <!-- P2: Architecture Réseau -->
+             <div class="project-card card-hover rounded-[40px] overflow-hidden reveal group">
+               <div class="h-56 bg-[#0d0d14] flex items-center justify-center p-12 relative overflow-hidden">
+                 <div class="absolute inset-0 bg-teal-500/5 group-hover:bg-teal-500/10 transition-colors"></div>
+                 <svg class="h-28 w-28 text-teal-400 relative z-10 transition-transform duration-500 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+               </div>
+               <div class="p-10">
+                 <h3 class="text-2xl font-bold mb-4 leading-tight">Architecture & Routage</h3>
+                 <p class="text-gray-400 text-sm mb-8 leading-relaxed">Conception d'une infrastructure réseau segmentée avec VLAN, Routage et pare-feu.</p>
+                 <button onclick="openProjectModal(2)" class="w-full py-4 rounded-2xl bg-white text-black font-black hover:bg-teal-400 transition-colors">Détails du projet</button>
+               </div>
+             </div>
+
+             <!-- P3: DNS DHCP -->
+             <div class="project-card card-hover rounded-[40px] overflow-hidden reveal group">
+               <div class="h-56 bg-gradient-to-br from-lime-600/10 to-green-900/10 flex items-center justify-center">
+                 <div class="text-center group-hover:scale-110 transition-transform duration-500">
+                    <span class="text-5xl font-black text-white">DNS/DHCP</span>
+                    <p class="mono text-[10px] text-lime-400 font-bold uppercase tracking-[0.3em] mt-2">Hybride Environnement</p>
+                 </div>
+               </div>
+               <div class="p-10">
+                 <h3 class="text-2xl font-bold mb-4 leading-tight">Serveurs DNS & DHCP</h3>
+                 <p class="text-gray-400 text-sm mb-8 leading-relaxed">Implémentation de l'adressage et résolution de noms sous Windows et Linux Debian.</p>
+                 <button onclick="openProjectModal(3)" class="w-full py-4 rounded-2xl bg-white text-black font-black hover:bg-lime-400 transition-colors">Détails du projet</button>
+               </div>
+             </div>
+
+             <!-- P4: Portainer -->
+             <div class="project-card card-hover rounded-[40px] overflow-hidden reveal group">
+                <div class="h-56 bg-[#0a0a0f] flex items-center justify-center p-12 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-green-500/5 group-hover:bg-green-500/10 transition-colors"></div>
+                    <svg class="h-40 w-40 relative z-10 transition-transform duration-500 group-hover:scale-110" viewBox="0 0 24 24" fill="none">
+                        <path d="M13.962 8.161c.656 0 1.29-.051 1.29-.051.102-.006.182-.088.182-.19V6.83c0-.106-.089-.194-.194-.194h-1.278c-.105 0-.194.088-.194.194v1.088c0 .13.111.243.242.243zM13.962 10.14c.656 0 1.29-.051 1.29-.051.102-.006.182-.088.182-.19V8.81c0-.106-.089-.194-.194-.194h-1.278c-.105 0-.194.088-.194.194v1.088c0 .13.111.243.242.243zM23.763 12.356c-.035-.045-.078-.088-.125-.13l-.014-.012c-.221-.19-.447-.369-.675-.542-.511-.387-.991-.707-1.428-1.002-.622-.416-1.166-.757-1.585-1.077-.417-.321-.715-.558-.876-.732-.202-.218-.328-.535-.37-.912-.045-.398-.016-.893.076-1.42.062-.357.142-.71.226-1.059l.01-.044c.002-.006.002-.012.002-.016-.02-.184-.051-.365-.091-.541-.041-.176-.101-.347-.183-.51a.56.56 0 0 0-.289-.276z" fill="#22c55e"/>
+                    </svg>
+                </div>
+                <div class="p-10">
+                  <h3 class="text-2xl font-bold mb-4 leading-tight">Infrastructure Portainer</h3>
+                  <p class="text-gray-400 text-sm mb-8 leading-relaxed">Conteneurisation de services DNS, DHCP et Web via Docker & Portainer.</p>
+                  <button onclick="openProjectModal(4)" class="w-full py-4 rounded-2xl bg-white text-black font-black hover:bg-green-400 transition-colors">Détails du projet</button>
+                </div>
+             </div>
+
+             <!-- P5: Approbation -->
+             <div class="project-card card-hover rounded-[40px] overflow-hidden reveal group">
+                <div class="h-56 bg-gradient-to-br from-teal-600/10 to-green-900/10 flex items-center justify-center">
+                   <div class="text-center group-hover:scale-110 transition-transform duration-500">
+                      <svg class="w-24 h-24 text-teal-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                      </svg>
+                      <span class="mono text-[10px] text-teal-400 font-bold uppercase tracking-[0.3em]">Active Directory</span>
+                   </div>
+                </div>
+                <div class="p-10">
+                  <h3 class="text-2xl font-bold mb-4 leading-tight">Approbation de domaine</h3>
+                  <p class="text-gray-400 text-sm mb-8 leading-relaxed">Relations de confiance Windows Server pour l'accès inter-forêts aux ressources.</p>
+                  <button onclick="openProjectModal(5)" class="w-full py-4 rounded-2xl bg-white text-black font-black hover:bg-teal-400 transition-colors">Détails du projet</button>
+                </div>
+             </div>
+
+             <!-- P6: Services Linux -->
+             <div class="project-card card-hover rounded-[40px] overflow-hidden reveal group">
+                <div class="h-56 bg-[#0a0a0f] flex items-center justify-center relative overflow-hidden">
+                   <div class="absolute inset-0 bg-green-500/5 group-hover:bg-green-500/10 transition-colors"></div>
+                   <div class="text-center group-hover:scale-110 transition-transform duration-500 z-10">
+                      <svg class="w-24 h-24 text-green-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3M13 15h4M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                      <span class="mono text-[10px] text-green-400 font-bold uppercase tracking-[0.3em]">LAMP & Sécurité</span>
+                   </div>
+                </div>
+                <div class="p-10">
+                  <h3 class="text-2xl font-bold mb-4 leading-tight">Services Serveur Linux</h3>
+                  <p class="text-gray-400 text-sm mb-8 leading-relaxed">Déploiement de serveurs Web (Apache), annuaire LDAP, ticketing GLPI et Fail2ban.</p>
+                  <button onclick="openProjectModal(6)" class="w-full py-4 rounded-2xl bg-white text-black font-black hover:bg-green-400 transition-colors">Détails du projet</button>
+                </div>
+             </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- VEILLE TECHNOLOGIQUE -->
+      <section id="page-veille" class="page min-h-screen hidden px-6 py-24">
+        <div class="max-w-6xl mx-auto">
+           <header class="mb-16 reveal">
+             <h2 class="text-6xl font-black mb-6 italic tracking-tight"><span class="gradient-text">Veille Technologique.</span></h2>
+             <p class="text-gray-400 text-xl font-light italic">Thème : L'évolution du <strong>SD-WAN</strong> (2024-2026).</p>
+           </header>
+
+           <div class="grid lg:grid-cols-12 gap-10 items-start">
+             <div class="lg:col-span-5 space-y-6 reveal">
+               <div class="card-hover p-10 rounded-[40px] border-green-500/20 bg-green-500/5">
+                 <h3 class="text-2xl font-bold mb-6 text-green-400 italic flex items-center gap-3">
+                   <span class="w-10 h-px bg-green-400"></span> Évolution 2024-2026
+                 </h3>
+                 <p class="text-gray-300 leading-relaxed mb-6 text-lg">
+                   Ces deux dernières années, le SD-WAN a franchi une étape critique en s'éloignant du simple routage logiciel pour devenir le pilier du modèle <strong>SASE</strong> (Secure Access Service Edge). 
+                 </p>
+                 <p class="text-gray-400 leading-relaxed font-light mb-8 italic">
+                    L'innovation majeure réside dans l'intégration massive de l'<strong>IA (AIOps)</strong>, capable de prédire les congestions de liens et de basculer le trafic avant même que l'utilisateur ne ressente une dégradation. On observe également une convergence totale entre la connectivité 5G privée et le pilotage SD-WAN.
+                 </p>
+                 <div class="space-y-4">
+                    <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5">
+                        <span class="text-2xl">🛡️</span>
+                        <div><p class="text-xs font-bold text-green-400 uppercase">Focus Sécurité</p><p class="text-xs text-gray-500">Convergence SD-WAN & ZTNA</p></div>
+                    </div>
+                    <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5">
+                        <span class="text-2xl">🧠</span>
+                        <div><p class="text-xs font-bold text-green-400 uppercase">Focus IA</p><p class="text-xs text-gray-500">Routage prédictif temps-réel</p></div>
+                    </div>
+                 </div>
+               </div>
+             </div>
+
+             <!-- FLUX RSS LIVE -->
+             <div class="lg:col-span-7 reveal">
+               <div class="card-hover rounded-[40px] overflow-hidden flex flex-col h-[700px]">
+                 <div class="p-8 border-b border-white/5 flex items-center justify-between bg-white/5">
+                   <div class="flex items-center gap-3">
+                     <!-- Point lumineux Lime pour indiquer le Live -->
+                     <div class="w-3 h-3 bg-lime-500 rounded-full animate-pulse shadow-[0_0_10px_#84cc16]"></div>
+                     <h3 class="font-bold text-sm tracking-widest uppercase text-white">Live Flux : Google Actualités</h3>
+                   </div>
+                   <button onclick="refreshRSS()" class="p-2 hover:bg-white/10 rounded-full transition-all group" title="Mettre à jour le flux">
+                     <svg class="w-5 h-5 text-green-400 group-active:rotate-180 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+                   </button>
+                 </div>
+                 <div id="rssContainer" class="p-8 space-y-8 overflow-y-auto flex-1 scroll-smooth">
+                     <!-- Les articles vont s'injecter ici via JavaScript -->
+                 </div>
+               </div>
+             </div>
+
+           </div>
+        </div>
+      </section>
+
+      <!-- SYNTHÈSE -->
+      <section id="page-synthese" class="page min-h-screen hidden px-6 py-24">
+        <div class="max-w-5xl mx-auto text-center text-left">
+           <h2 class="text-6xl font-black mb-16 reveal italic tracking-tight"><span class="gradient-text">Synthèse.</span></h2>
+           <div class="grid md:grid-cols-2 gap-8 reveal">
+             <div class="card-hover p-12 rounded-[50px] border-l-4 border-green-500 text-left">
+               <h3 class="text-3xl font-black mb-4 tracking-tight">Tableau E4</h3>
+               <p class="text-gray-400 mb-10 leading-relaxed text-sm">Support et mise à disposition de services informatiques.</p>
+               <button class="px-10 py-4 bg-white text-black font-black rounded-2xl hover:bg-green-400 transition-all active:scale-95 shadow-lg">Consulter PDF</button>
+             </div>
+             <div class="card-hover p-12 rounded-[50px] border-l-4 border-teal-500 text-left">
+               <h3 class="text-3xl font-black mb-4 tracking-tight">Tableau E5</h3>
+               <p class="text-gray-400 mb-10 leading-relaxed text-sm">Cybersécurité et administration des systèmes.</p>
+               <button class="px-10 py-4 bg-white text-black font-black rounded-2xl hover:bg-teal-400 transition-all active:scale-95 shadow-lg">Consulter PDF</button>
+             </div>
+           </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="py-20 border-t border-white/5 opacity-40 text-center">
+      <span class="text-xl font-black tracking-tighter">SB.</span>
+      <p class="text-[10px] font-bold uppercase tracking-widest mt-2">Selyan Boudia · Portfolio SISR 2026</p>
+    </footer>
+  </div>
+
+  <!-- MODALE -->
+  <div id="projectModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-6">
+    <div class="absolute inset-0 bg-black/95 backdrop-blur-xl" onclick="closeProjectModal()"></div>
+    <div class="relative glass-modal max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-[50px] border border-white/10 p-12 shadow-2xl">
+      <button onclick="closeProjectModal()" class="absolute top-10 right-10 text-white/50 hover:text-white transition-colors">
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+      </button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script>
+    /* EFFET VISUEL : RÉSEAU DE NŒUDS INTERACTIF */
+    const canvas = document.getElementById('networkCanvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let particles = [];
+    const mouse = { x: null, y: null, radius: 150 };
+
+    function resizeCanvas() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+      initParticles();
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+    window.addEventListener('mouseout', () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 0.8;
+        this.vy = (Math.random() - 0.5) * 0.8;
+        this.size = Math.random() * 2 + 1;
+        this.color = ['#22c55e', '#14b8a6', '#84cc16'][Math.floor(Math.random() * 3)];
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        if (this.x < 0 || this.x > width) this.vx *= -1;
+        if (this.y < 0 || this.y > height) this.vy *= -1;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+    }
+
+    function initParticles() {
+      particles = [];
+      // Ajuste le nombre de particules en fonction de la taille de l'écran
+      let numParticles = Math.floor((width * height) / 12000); 
+      for (let i = 0; i < numParticles; i++) {
+        particles.push(new Particle());
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, width, height);
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+
+        // Connecter les particules entre elles
+        for (let j = i; j < particles.length; j++) {
+          let dx = particles[i].x - particles[j].x;
+          let dy = particles[i].y - particles[j].y;
+          let dist = Math.sqrt(dx * dx + dy * dy);
+          
+          if (dist < 120) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(34, 197, 94, ${0.15 - dist/800})`; // Lignes vertes transparentes
+            ctx.lineWidth = 0.5;
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+
+        // Interaction avec la souris
+        if (mouse.x != null && mouse.y != null) {
+          let dx = particles[i].x - mouse.x;
+          let dy = particles[i].y - mouse.y;
+          let dist = Math.sqrt(dx * dx + dy * dy);
+          
+          if (dist < mouse.radius) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(20, 184, 166, ${0.4 - dist/(mouse.radius*2.5)})`; // Lignes vers la souris
+            ctx.lineWidth = 1;
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.stroke();
+            
+            // Repousser légèrement les particules
+            particles[i].x += dx * 0.02;
+            particles[i].y += dy * 0.02;
+          }
+        }
+      }
+      requestAnimationFrame(animateParticles);
+    }
+
+    // Initialisation de l'animation
+    resizeCanvas();
+    animateParticles();
+
+
+    /* DONNEES DES PROJETS */
+    const projectDetails = {
+      1: {
+        title: 'Application Scan Réseau Low-Code',
+        category: 'Gestion de Projet / Low-Code',
+        description: `Dans le cadre de ma formation, j'ai conçu une application <strong>Low Code</strong> (avec très peu de programmation) pour répondre rapidement à un besoin métier et tester une solution simple à déployer.
+        <br><br>
+        <strong class="text-white text-xl block mb-4">🚀 Étapes de réalisation :</strong>
+        <ul class="list-disc pl-6 space-y-3 text-lg">
+            <li><strong>Contexte & Conception (7 fév - 6 mars 2024) :</strong> Analyse du besoin métier, structuration des données et création de l'interface utilisateur (formulaires, écrans).</li>
+            <li><strong>Configuration & Dev (13 mars - 20 mars 2024) :</strong> Utilisation d'une plateforme Low Code, mise en place des fonctionnalités et automatisation d'actions métiers sans coder.</li>
+            <li><strong>Tests (27 mars - 3 avril 2024) :</strong> Vérification du bon fonctionnement global, correction des erreurs (débogage) et validation finale du produit.</li>
+        </ul>
+        <br>
+        <strong class="text-white text-xl block mb-2">🎯 Objectifs atteints :</strong> 
+        <span class="text-lg">Déploiement d'une solution totalement fonctionnelle offrant un gain de temps considérable par rapport au développement classique. Ce projet m'a permis de développer une vraie logique de gestion de projet de A à Z.</span>`,
+        icon: `<svg class="h-full w-full p-8" viewBox="0 0 100 100"><path d="M50 5L10 25V75L50 95L90 75V25L50 5Z" fill="#22c55e" fill-opacity="0.2" stroke="#22c55e" stroke-width="2"/><path d="M30 35L50 25L70 35V65L50 75L30 65V35Z" fill="#22c55e"/></svg>`,
+        tasks: ['Analyse des besoins', 'Conception de l\'application', 'Utilisation d\'un outil Low Code', 'Tests et validation', 'Gestion de projet'],
+        techs: ['Power Apps', 'Power Automate', 'Low-Code', 'Automation'],
+        color: 'green'
+      },
+      2: {
+        title: 'Architecture & Sécurité Réseau',
+        category: 'Infrastructures / Réseaux',
+        description: 'Conception technique d\'une architecture réseau d\'entreprise avec mise en place de la <strong>segmentation logique</strong> (VLAN) et du <strong>routage inter-VLAN</strong>. Mise en pratique directe de concepts de cybersécurité comme le filtrage via Access Control Lists (ACL).',
+        icon: `<svg class="h-full w-full p-12 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>`,
+        tasks: ['Définition de la topologie réseau', 'Configuration de VLAN sur commutateurs Cisco', 'Création de règles de Firewall et ACLs', 'Analyse de trames avec Wireshark'],
+        techs: ['Cisco IOS', 'VLAN / Routage', 'ACL', 'Wireshark', 'TCP/IP'],
+        color: 'teal'
+      },
+      3: {
+        title: 'Infrastructure DNS & DHCP',
+        category: 'Systèmes Hybrides',
+        description: 'Mise en place de la pile protocolaire fondamentale d\'un réseau local. Installation du rôle DHCP sur <strong>Windows Server</strong> et configuration du serveur DNS récursif sous <strong>Linux Debian</strong> via BIND9.',
+        icon: `<svg class="h-full w-full p-12 text-lime-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>`,
+        tasks: ['Adressage IP dynamique et réservations', 'Résolution de noms BIND9', 'Intégration d\'hôtes dans le domaine', 'Tests réseau : ping, tracert, nslookup'],
+        techs: ['Windows Server', 'Linux Debian', 'BIND9', 'DHCP Server'],
+        color: 'lime'
+      },
+      4: {
+        title: 'Infrastructure Portainer',
+        category: 'Micro-services / Docker',
+        description: 'Déploiement d\'un environnement de conteneurisation complet géré par <strong>Portainer</strong>. Cette infrastructure permet d\'isoler et d\'orchestrer des services critiques comme des serveurs DHCP, DNS réplicats et des instances Web haute performance.',
+        icon: `<svg class="h-full w-full p-12" viewBox="0 0 24 24" fill="#22c55e"><path d="M13.962 8.161c.656 0 1.29-.051 1.29-.051.102-.006.182-.088.182-.19V6.83c0-.106-.089-.194-.194-.194h-1.278c-.105 0-.194.088-.194.194v1.088c0 .13.111.243.242.243zM13.962 10.14c.656 0 1.29-.051 1.29-.051.102-.006.182-.088.182-.19V8.81c0-.106-.089-.194-.194-.194h-1.278c-.105 0-.194.088-.194.194v1.088c0 .13.111.243.242.243zM23.763 12.356c-.035-.045-.078-.088-.125-.13l-.014-.012c-.221-.19-.447-.369-.675-.542-.511-.387-.991-.707-1.428-1.002-.622-.416-1.166-.757-1.585-1.077-.417-.321-.715-.558-.876-.732-.202-.218-.328-.535-.37-.912-.045-.398-.016-.893.076-1.42.062-.357.142-.71.226-1.059l.01-.044c.002-.006.002-.012.002-.016-.02-.184-.051-.365-.091-.541-.041-.176-.101-.347-.183-.51a.56.56 0 0 0-.289-.276z"/></svg>`,
+        tasks: ['Isolation via Docker', 'Orchestration Portainer', 'Management des volumes', 'Conteneurs DHCP/DNS/Web'],
+        techs: ['Docker', 'Portainer', 'Virtualisation', 'Micro-services'],
+        color: 'green'
+      },
+      5: {
+        title: 'Administration & Approbation AD',
+        category: 'Active Directory / Sécurité',
+        description: 'Administration poussée d\'un environnement <strong>Active Directory</strong> avec la gestion fine des comptes (UOs, GPO, groupes de sécurité) et l\'établissement de <strong>relations d\'approbation</strong> (Trust) entre différentes forêts Windows Server.',
+        icon: `<svg class="h-full w-full p-12 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>`,
+        tasks: ['Création et application de GPO (Stratégies de groupe)', 'Trust inter-forêts & DNS Forwarders', 'Authentification Kerberos', 'Gestion des dossiers partagés (SMB/NFS)'],
+        techs: ['Windows Server', 'Active Directory', 'GPO', 'Sécurité'],
+        color: 'teal'
+      },
+      6: {
+        title: 'Services Serveurs Linux',
+        category: 'Administration Système',
+        description: 'Étude et déploiement de services essentiels en entreprise sous <strong>Linux</strong>. Le projet couvre l\'hébergement dynamique, l\'annuaire centralisé, et la protection active contre les attaques réseaux (bruteforce, DDoS).',
+        icon: `<svg class="h-full w-full p-12 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M8 9l3 3-3 3M13 15h4M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>`,
+        tasks: ['Déploiement de la pile LAMP (Linux, Apache, MySQL, PHP)', 'Mise en place de l\'outil GLPI pour la gestion de parc', 'Intégration d\'un annuaire LDAP', 'Configuration de sécurité avec Fail2ban'],
+        techs: ['Apache2', 'MariaDB', 'GLPI', 'LDAP', 'Fail2ban'],
+        color: 'green'
+      }
+    };
+
+    /* FETCH REAL RSS FEED FROM GOOGLE NEWS API (SD-WAN) */
+    async function fetchRSS() {
+      const container = document.getElementById('rssContainer');
+      container.style.opacity = '0';
+      
+      setTimeout(async () => {
+        // Animation de chargement
+        container.innerHTML = `
+            <div class="flex flex-col justify-center items-center h-full opacity-50 space-y-4">
+                <div class="w-10 h-10 border-4 border-green-400 border-t-transparent rounded-full animate-spin"></div>
+                <p class="text-xs uppercase tracking-widest font-bold text-green-400">Recherche d'actualités...</p>
+            </div>`;
+        container.style.opacity = '1';
+
+        try {
+          const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://news.google.com/rss/search?q=SD-WAN&hl=fr&gl=FR&ceid=FR:fr');
+          const data = await response.json();
+          
+          if (data.status === 'ok' && data.items.length > 0) {
+            container.style.opacity = '0';
+            setTimeout(() => {
+                container.innerHTML = data.items.slice(0, 6).map(item => {
+                  const date = new Date(item.pubDate).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+                  const cleanTitle = item.title.split(' - ')[0]; 
+                  
+                  return `
+                    <article class="rss-item pb-8 border-b border-white/5 last:border-0 hover:bg-white/5 p-4 rounded-2xl transition-all">
+                      <div class="flex items-center gap-3 mb-3 text-[10px] font-black uppercase tracking-widest">
+                        <span class="text-green-400">${item.source || 'Actualité Réseau'}</span>
+                        <span class="text-gray-500">${date}</span>
+                      </div>
+                      <a href="${item.link}" target="_blank" class="block group">
+                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors leading-snug">${cleanTitle}</h4>
+                        <p class="text-sm text-green-400/50 flex items-center gap-2 font-medium opacity-0 group-hover:opacity-100 transition-opacity">Lire l'article <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></p>
+                      </a>
+                    </article>
+                  `;
+                }).join('');
+                container.style.opacity = '1';
+            }, 300);
+          } else {
+            throw new Error('Aucun article trouvé');
+          }
+        } catch (error) {
+          container.innerHTML = `
+            <div class="p-8 bg-red-500/10 border border-red-500/20 rounded-2xl text-center">
+                <p class="text-red-400 text-sm font-bold">Impossible de charger le flux en direct.</p>
+                <p class="text-gray-400 text-xs mt-2">Veuillez vérifier votre connexion internet ou réessayer plus tard.</p>
+            </div>`;
+        }
+      }, 300); 
+    }
+
+    function refreshRSS() {
+      fetchRSS();
+    }
+
+    /* NAVIGATION ET MODALES */
+    function navigateTo(page) {
+      document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
+      const target = document.getElementById('page-' + page);
+      if(target) {
+        target.classList.remove('hidden');
+        if(page === 'veille') fetchRSS(); 
+      }
+      document.querySelectorAll('.nav-link').forEach(link => link.classList.toggle('active', link.dataset.page === page));
+      document.getElementById('app').scrollTo({ top: 0, behavior: 'smooth' });
+      setTimeout(handleScroll, 100);
+    }
+
+    function openProjectModal(id) {
+      const p = projectDetails[id];
+      const content = document.getElementById('modalContent');
+      content.innerHTML = `
+        <div class="space-y-10">
+          <div class="flex flex-col md:flex-row gap-12 items-start">
+            <div class="w-full md:w-56 h-56 flex items-center justify-center bg-white/5 rounded-[40px] border border-white/10 shadow-2xl overflow-hidden">
+                ${p.icon}
+            </div>
+            <div class="flex-1">
+              <span class="px-5 py-2 rounded-full bg-${p.color}-500/10 text-${p.color}-400 text-[10px] font-black uppercase tracking-[0.2em]">${p.category}</span>
+              <h2 class="text-5xl font-black text-white mt-8 leading-tight tracking-tight">${p.title}</h2>
+            </div>
+          </div>
+          <div class="text-xl text-gray-400 font-light leading-relaxed">${p.description}</div>
+          <div class="grid md:grid-cols-2 gap-16 border-t border-white/5 pt-12">
+            <div>
+              <h3 class="font-black text-white mb-8 uppercase tracking-widest text-xs opacity-30 italic">Actions Réalisées</h3>
+              <ul class="space-y-5">
+                ${p.tasks.map(t => `<li class="flex items-center gap-5 text-gray-300"><span class="w-2 h-2 rounded-full bg-${p.color}-400 shadow-[0_0_10px_var(--${p.color})]"></span> ${t}</li>`).join('')}
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-black text-white mb-8 uppercase tracking-widest text-xs opacity-30 italic">Stack Technique</h3>
+              <div class="flex flex-wrap gap-4">
+                ${p.techs.map(tech => `<span class="px-6 py-4 rounded-2xl bg-white/5 text-gray-300 text-[10px] font-bold border border-white/5 shadow-inner uppercase tracking-widest">${tech}</span>`).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+      document.getElementById('projectModal').classList.remove('hidden');
+      document.getElementById('projectModal').classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeProjectModal() {
+      document.getElementById('projectModal').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function handleScroll() {
+      document.querySelectorAll('.reveal').forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight * 0.95) el.classList.add('active');
+      });
+    }
+
+    document.getElementById('app').addEventListener('scroll', handleScroll);
+    window.onload = () => { handleScroll(); };
+    function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('hidden'); }
+  </script>
+ </body>
+</html>
