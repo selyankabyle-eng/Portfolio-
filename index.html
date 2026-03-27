@@ -210,62 +210,92 @@
           <!-- Section Expériences -->
           <div class="mt-32 space-y-24 reveal">
             <div>
-              <h3 class="text-4xl font-black mb-6 flex items-center gap-4 tracking-tight"><span class="text-green-400">💼</span> Expériences Professionnelles</h3>
-              <p class="text-gray-300 text-lg leading-relaxed font-light mb-10">
-                  Mes expériences s'articulent autour du <strong class="text-green-400">Service aux Organisations</strong> : le <strong class="text-white">Support</strong> (assistance de proximité) et les <strong class="text-white">Projets</strong> (déploiement, digitalisation, audit et sécurité).
-              </p>
+              <h3 class="text-4xl font-black mb-8 flex items-center gap-4 tracking-tight"><span class="text-green-400">💼</span> Expériences Professionnelles</h3>
               
-              <div class="grid md:grid-cols-2 gap-8">
-                <!-- Stage 3 -->
+              <!-- NOUVEAU : Bloc Présentation SLB avec Logo SVG 100% Intégré -->
+              <div class="card-hover p-8 md:p-10 rounded-[40px] border-blue-500/20 bg-blue-500/5 mb-16 flex flex-col md:flex-row gap-10 items-center md:items-start relative overflow-hidden">
+                 <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+                 
+                 <!-- Logo SLB (Code SVG Intégré : Ne casse jamais et prend la couleur du texte) -->
+                 <div class="p-6 rounded-[30px] flex-shrink-0 w-40 h-40 flex items-center justify-center bg-blue-500/10 border border-blue-500/20 shadow-inner relative z-10 text-white">
+                     <svg viewBox="0 0 300 150" class="w-full h-full drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]" fill="currentColor">
+                        <!-- Forme gauche -->
+                        <path d="M 20,40 L 20,110 L 120,110 C 80,110 50,40 20,40 Z" />
+                        <!-- Texte SLB stylisé -->
+                        <text x="130" y="112" font-family="Arial, Helvetica, sans-serif" font-weight="bold" font-size="95" letter-spacing="-4">slb</text>
+                        <!-- Forme droite -->
+                        <path d="M 160,125 L 280,125 L 280,150 C 220,150 180,140 160,125 Z" />
+                     </svg>
+                 </div>
+                 
+                 <div class="relative z-10 flex-1">
+                    <div class="flex flex-wrap items-center gap-3 mb-4">
+                        <h4 class="text-3xl font-black text-white tracking-tight">SLB <span class="text-blue-400 font-light text-xl">| SRPC Clamart</span></h4>
+                        <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-[10px] font-black uppercase tracking-widest">Technologie & Énergie</span>
+                    </div>
+                    
+                    <p class="text-gray-300 text-sm leading-relaxed mb-5 text-justify">
+                        Anciennement Schlumberger, <strong>SLB</strong> est une entreprise technologique d'envergure mondiale, leader dans l'innovation pour l'industrie de l'énergie. Elle conçoit des solutions pour l'exploration, la production et s'investit massivement dans la transition énergétique et la décarbonation.
+                    </p>
+                    
+                    <div class="p-6 rounded-3xl bg-blue-500/10 border border-blue-500/20 mb-6 relative overflow-hidden">
+                        <div class="absolute -left-4 -top-4 w-16 h-16 bg-blue-400/20 blur-2xl rounded-full"></div>
+                        <p class="text-gray-200 text-sm leading-relaxed text-justify relative z-10">
+                            Fondé en 1959, le <strong>Schlumberger Riboud Product Center (SRPC)</strong> basé à Clamart est le plus grand centre de technologie et de développement de SLB en Europe. Plus de 900 scientifiques, ingénieurs et techniciens de plus de 40 nationalités y conçoivent, fabriquent et déploient des systèmes de pointe dont les services sont fournis aux clients dans le monde entier.
+                        </p>
+                    </div>
+
+                    <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 shadow-inner">
+                        <span class="text-2xl text-blue-400"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg></span>
+                        <div>
+                            <h5 class="text-white font-bold text-sm mb-1">Synergie IT Internationale</h5>
+                            <p class="text-xs text-gray-400 leading-relaxed">Administration d'un environnement hybride (Microsoft Cloud) où l'équipe locale collabore étroitement avec l'IT globale pour opérer à l'échelle mondiale.</p>
+                        </div>
+                    </div>
+                 </div>
+              </div>
+              
+              <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+                <!-- Stage 3 (2026) -->
                 <div class="card-hover p-8 rounded-[40px] border-green-500/20 bg-green-500/5 relative overflow-hidden">
                     <div class="absolute top-0 right-0 bg-green-500/20 px-6 py-2 rounded-bl-3xl font-black text-green-400">2026</div>
                     <div class="mb-6 mt-4">
-                        <span class="px-3 py-1.5 rounded-full bg-green-500/20 text-green-400 text-[10px] font-black uppercase tracking-widest">Stage SLB · Autonomie & Analyse</span>
-                        <h4 class="text-2xl font-bold text-white mt-4">Audit IT & Cybersécurité</h4>
-                        <p class="text-gray-400 text-xs font-bold tracking-widest uppercase mt-2">SLB (Schlumberger)</p>
+                        <span class="px-3 py-1.5 rounded-full bg-green-500/20 text-green-400 text-[10px] font-black uppercase tracking-widest">Stage SLB · Autonomie & Réseau</span>
+                        <h4 class="text-2xl font-bold text-white mt-4">Support & Opérations Réseau</h4>
+                        <p class="text-gray-400 text-xs font-bold tracking-widest uppercase mt-2">SLB Clamart (Recherche & Production)</p>
                     </div>
                     <ul class="space-y-3 text-sm text-gray-300">
-                        <li class="flex items-start gap-3"><span class="text-green-400 font-black mt-0.5">▹</span> <span class="leading-relaxed"><strong>Sécurité :</strong> Formations cybersécurité, détection de phishing et comportement en entreprise.</span></li>
-                        <li class="flex items-start gap-3"><span class="text-green-400 font-black mt-0.5">▹</span> <span class="leading-relaxed"><strong>Audit :</strong> Analyse complète d'un réseau de site et rédaction de la documentation technique associée.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-green-400 font-black mt-0.5">▹</span> <span class="leading-relaxed"><strong>Administration :</strong> Vérification de configuration d'équipements réseaux via le superviseur mRemoteNG.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-green-400 font-black mt-0.5">▹</span> <span class="leading-relaxed"><strong>Système :</strong> Reimage de machines (validation NAC, déploiement Windows, application des patchs de sécurité).</span></li>
+                        <li class="flex items-start gap-3"><span class="text-green-400 font-black mt-0.5">▹</span> <span class="leading-relaxed"><strong>Conformité :</strong> Suivi des formations cybersécurité et sensibilisation au bien-être en entreprise.</span></li>
                     </ul>
                 </div>
-                <!-- Stage 2 -->
+                <!-- Stage 2 (2025) -->
                 <div class="card-hover p-8 rounded-[40px] border-green-500/20 bg-green-500/5 relative overflow-hidden">
                     <div class="absolute top-0 right-0 bg-green-500/20 px-6 py-2 rounded-bl-3xl font-black text-green-400">2025</div>
                     <div class="mb-6 mt-4">
-                        <span class="px-3 py-1.5 rounded-full bg-green-500/20 text-green-400 text-[10px] font-black uppercase tracking-widest">Stage SLB · Implication Croissante</span>
-                        <h4 class="text-2xl font-bold text-white mt-4">Digitalisation & Infra</h4>
-                        <p class="text-gray-400 text-xs font-bold tracking-widest uppercase mt-2">SLB (Schlumberger)</p>
+                        <span class="px-3 py-1.5 rounded-full bg-green-500/20 text-green-400 text-[10px] font-black uppercase tracking-widest">Stage SLB · Gestion de Parc</span>
+                        <h4 class="text-2xl font-bold text-white mt-4">IT Support & Microsoft Cloud</h4>
+                        <p class="text-gray-400 text-xs font-bold tracking-widest uppercase mt-2">SLB Clamart (Recherche & Production)</p>
                     </div>
                     <ul class="space-y-3 text-sm text-gray-300">
-                        <li class="flex items-start gap-3"><span class="text-green-400 font-black mt-0.5">▹</span> <span class="leading-relaxed">Rôle actif dans l'implémentation de la digitalisation des piliers de l'entreprise.</span></li>
-                        <li class="flex items-start gap-3"><span class="text-green-400 font-black mt-0.5">▹</span> <span class="leading-relaxed">Maintien de la continuité opérationnelle des équipes à l'échelle mondiale.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-green-400 font-black mt-0.5">▹</span> <span class="leading-relaxed">Gestion et résolution de tickets utilisateurs avec les équipes globales.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-green-400 font-black mt-0.5">▹</span> <span class="leading-relaxed">Gestion d'un parc hybride via <strong>Microsoft Intune</strong> et services propriétaires SLB.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-green-400 font-black mt-0.5">▹</span> <span class="leading-relaxed">Maintien en condition opérationnelle (MCO) de l'ensemble du parc informatique.</span></li>
                     </ul>
                 </div>
-                <!-- Stage 1 -->
+                <!-- Stage 1 (2023-2024) -->
                 <div class="card-hover p-8 rounded-[40px] border-green-500/20 bg-green-500/5 relative overflow-hidden">
                     <div class="absolute top-0 right-0 bg-green-500/20 px-6 py-2 rounded-bl-3xl font-black text-green-400">2023-2024</div>
                     <div class="mb-6 mt-4">
                         <span class="px-3 py-1.5 rounded-full bg-green-500/20 text-green-400 text-[10px] font-black uppercase tracking-widest">Stage SLB · Intégration</span>
-                        <h4 class="text-2xl font-bold text-white mt-4">Support Opérationnel IT</h4>
-                        <p class="text-gray-400 text-xs font-bold tracking-widest uppercase mt-2">SLB (Schlumberger)</p>
+                        <h4 class="text-2xl font-bold text-white mt-4">Déploiement & Assistance</h4>
+                        <p class="text-gray-400 text-xs font-bold tracking-widest uppercase mt-2">SLB Clamart (Recherche & Production)</p>
                     </div>
                     <ul class="space-y-3 text-sm text-gray-300">
-                        <li class="flex items-start gap-3"><span class="text-green-400 font-black mt-0.5">▹</span> <span class="leading-relaxed">Première intégration en équipe IT pour garantir l'efficacité du SI.</span></li>
-                        <li class="flex items-start gap-3"><span class="text-green-400 font-black mt-0.5">▹</span> <span class="leading-relaxed">Assistance de proximité et compréhension des standards de sécurité.</span></li>
-                    </ul>
-                </div>
-                <!-- Mairie -->
-                <div class="card-hover p-8 rounded-[40px] border-teal-500/20 bg-teal-500/5 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-teal-500/20 px-6 py-2 rounded-bl-3xl font-black text-teal-400">2023</div>
-                    <div class="mb-6 mt-4">
-                        <span class="px-3 py-1.5 rounded-full bg-teal-500/20 text-teal-400 text-[10px] font-black uppercase tracking-widest">Stage Mairie · Support</span>
-                        <h4 class="text-2xl font-bold text-white mt-4">Support Parc Informatique</h4>
-                        <p class="text-gray-400 text-xs font-bold tracking-widest uppercase mt-2">Mairie de Bagneux</p>
-                    </div>
-                    <ul class="space-y-3 text-sm text-gray-300 flex-1">
-                        <li class="flex items-start gap-3"><span class="text-teal-400 font-black mt-0.5">▹</span> <span class="leading-relaxed">Maintien en condition opérationnelle du parc.</span></li>
-                        <li class="flex items-start gap-3"><span class="text-teal-400 font-black mt-0.5">▹</span> <span class="leading-relaxed">Déploiement de postes et résolution d'incidents de premier niveau.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-green-400 font-black mt-0.5">▹</span> <span class="leading-relaxed">Configuration matérielle et déploiement de postes de travail.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-green-400 font-black mt-0.5">▹</span> <span class="leading-relaxed">Assistance de proximité et résolution d'incidents de premier niveau.</span></li>
+                        <li class="flex items-start gap-3"><span class="text-green-400 font-black mt-0.5">▹</span> <span class="leading-relaxed">Reimage de machines et préparation avant attribution aux collaborateurs.</span></li>
                     </ul>
                 </div>
               </div>
@@ -308,115 +338,122 @@
         <div class="max-w-7xl mx-auto">
           <header class="mb-20 reveal">
             <h2 class="text-6xl font-black mb-6 italic tracking-tight"><span class="gradient-text">Compétences.</span></h2>
-            <p class="text-gray-400 text-xl font-light">Technologies, outils et protocoles que je maîtrise.</p>
+            <p class="text-gray-400 text-xl font-light">Infrastructures, protocoles réseau et administration système.</p>
           </header>
 
           <div class="grid lg:grid-cols-12 gap-16 items-start">
             
-            <!-- Colonne Gauche : Compétences Clés -->
+            <!-- Colonne Gauche : Compétences Clés (Orienté Réseau) -->
             <div class="lg:col-span-7 space-y-6 reveal">
               <h3 class="text-2xl font-black text-white mb-8 tracking-tight">Compétences clés</h3>
               
-              <!-- Architecture Réseau -->
-              <div class="card-hover p-8 rounded-[30px] border-green-500/20 bg-green-500/5 flex gap-6 items-start">
-                <div class="w-14 h-14 rounded-2xl bg-green-500/10 flex items-center justify-center flex-shrink-0 text-green-400">
+              <!-- 1. Ingénierie Réseau (Mis en avant) -->
+              <div class="card-hover p-8 rounded-[30px] border-teal-500/20 bg-teal-500/5 flex gap-6 items-start relative overflow-hidden">
+                <div class="absolute right-0 top-0 w-32 h-32 bg-teal-500/10 rounded-full blur-3xl"></div>
+                <div class="w-14 h-14 rounded-2xl bg-teal-500/10 flex items-center justify-center flex-shrink-0 text-teal-400 relative z-10">
                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
                 </div>
-                <div>
-                  <h4 class="text-xl font-bold text-white mb-2">Architecture & Configuration Réseau</h4>
-                  <p class="text-gray-400 leading-relaxed text-sm font-light">Maîtrise du modèle OSI, topologies réseau, création de VLANs, routage inter-VLAN et sertissage RJ45.</p>
+                <div class="relative z-10">
+                  <h4 class="text-xl font-bold text-white mb-2">Ingénierie & Architecture Réseau</h4>
+                  <p class="text-gray-400 leading-relaxed text-sm font-light">Conception de topologies (Draw.io, Packet Tracer). Maîtrise avancée du routage dynamique (<strong class="text-teal-400">OSPF</strong>), segmentation <strong class="text-teal-400">VLAN</strong> (Router-on-a-stick), et translation d'adresses (NAT/PAT). Supervision et vérification via mRemoteNG et audit de réseau (ex: FR0148).</p>
                 </div>
               </div>
 
-              <!-- Systèmes & Services -->
-              <div class="card-hover p-8 rounded-[30px] border-teal-500/20 bg-teal-500/5 flex gap-6 items-start">
-                <div class="w-14 h-14 rounded-2xl bg-teal-500/10 flex items-center justify-center flex-shrink-0 text-teal-400">
-                  <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" /></svg>
-                </div>
-                <div>
-                  <h4 class="text-xl font-bold text-white mb-2">Systèmes & Services</h4>
-                  <p class="text-gray-400 leading-relaxed text-sm font-light">Administration Windows Server (AD, DHCP, DNS), Linux (Debian, Ubuntu), serveurs Web (LAMP), GLPI et LDAP.</p>
-                </div>
-              </div>
-
-              <!-- Cybersécurité & Maintenance -->
+              <!-- 2. Cybersécurité Périmétrique -->
               <div class="card-hover p-8 rounded-[30px] border-green-500/20 bg-green-500/5 flex gap-6 items-start">
                 <div class="w-14 h-14 rounded-2xl bg-green-500/10 flex items-center justify-center flex-shrink-0 text-green-400">
                   <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
                 </div>
                 <div>
-                  <h4 class="text-xl font-bold text-white mb-2">Cybersécurité, Conformité & Analyse</h4>
-                  <p class="text-gray-400 leading-relaxed text-sm font-light">Analyse Wireshark, Firewalls, ACL, DMZ, VPN, Fail2ban, sécurisation BYOD, et protection de données (RGPD/PIA).</p>
+                  <h4 class="text-xl font-bold text-white mb-2">Cybersécurité Périmétrique & Filtrage</h4>
+                  <p class="text-gray-400 leading-relaxed text-sm font-light">Sécurisation des flux : création de DMZ, règles de Firewall, ACL (Access Control Lists), et tunnels VPN. Analyse de trames (Wireshark) et protection active contre le brute-force (Fail2ban).</p>
                 </div>
               </div>
 
-              <!-- Scripting & Programmation -->
+              <!-- 3. Systèmes & Haute Disponibilité -->
+              <div class="card-hover p-8 rounded-[30px] border-blue-500/20 bg-blue-500/5 flex gap-6 items-start">
+                <div class="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center flex-shrink-0 text-blue-400">
+                  <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" /></svg>
+                </div>
+                <div>
+                  <h4 class="text-xl font-bold text-white mb-2">Systèmes & Haute Disponibilité</h4>
+                  <p class="text-gray-400 leading-relaxed text-sm font-light">Déploiement de clusters de virtualisation (<strong class="text-blue-400">Proxmox VE</strong>) avec haute disponibilité (<strong class="text-blue-400">Corosync, Pacemaker</strong>). Administration Windows Server (AD, GPO, DHCP, DNS, changement de domaine) et services Linux : serveurs Web (Apache), annuaire LDAP, ticketing GLPI et Fail2ban.</p>
+                </div>
+              </div>
+
+              <!-- 4. Automatisation & Gestion de Parc -->
               <div class="card-hover p-8 rounded-[30px] border-lime-500/20 bg-lime-500/5 flex gap-6 items-start">
                 <div class="w-14 h-14 rounded-2xl bg-lime-500/10 flex items-center justify-center flex-shrink-0 text-lime-400">
                   <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
                 </div>
                 <div>
-                  <h4 class="text-xl font-bold text-white mb-2">Scripting & Bases de Données</h4>
-                  <p class="text-gray-400 leading-relaxed text-sm font-light">Automatisation via PowerShell, développement de scripts Python et gestion de bases de données relationnelles (SQL).</p>
+                  <h4 class="text-xl font-bold text-white mb-2">Automatisation & Gestion de Parc</h4>
+                  <p class="text-gray-400 leading-relaxed text-sm font-light">Gestion de parc hybride via <strong class="text-lime-400">Microsoft Intune</strong>. Automatisation de scans réseau via PowerShell couplés à l'environnement Low-Code (Power Apps / Power Automate).</p>
                 </div>
               </div>
             </div>
 
             <!-- Colonne Droite : Technologies Maîtrisées -->
             <div class="lg:col-span-5 space-y-12 reveal sticky top-32">
-              <h3 class="text-2xl font-black text-white tracking-tight">Technologies maîtrisées</h3>
+              <h3 class="text-2xl font-black text-white tracking-tight">Stack Technique</h3>
               
               <div class="space-y-8">
-                  <!-- OS -->
+                  <!-- Réseaux purs -->
                   <div>
-                      <h5 class="text-gray-400 font-bold mb-4 tracking-widest uppercase text-xs">Systèmes d'exploitation</h5>
-                      <div class="flex flex-wrap gap-3">
-                          <span class="px-5 py-2.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs font-bold flex items-center gap-2"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg> Windows Server</span>
-                          <span class="px-5 py-2.5 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/20 text-xs font-bold flex items-center gap-2"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.187 17.525a1.862 1.862 0 01-1.86-1.864c0-1.026.833-1.861 1.86-1.861a1.862 1.862 0 011.862 1.861 1.862 1.862 0 01-1.862 1.864zm-5.187-5.547a4.981 4.981 0 01-4.978-4.978A4.981 4.981 0 0112 2.022a4.981 4.981 0 014.978 4.978 4.981 4.981 0 01-4.978 4.978zm-5.187 5.547a1.862 1.862 0 01-1.862-1.864c0-1.026.834-1.861 1.862-1.861a1.862 1.862 0 011.861 1.861 1.862 1.862 0 01-1.861 1.864z"/></svg> Ubuntu</span>
-                          <span class="px-5 py-2.5 rounded-full bg-red-500/10 text-red-400 border border-red-500/20 text-xs font-bold">Debian</span>
+                      <h5 class="text-gray-400 font-bold mb-4 tracking-widest uppercase text-xs">Infrastructure & Routage</h5>
+                      <div class="flex flex-wrap gap-2">
+                          <span class="px-4 py-2 rounded-xl bg-teal-500/10 text-teal-400 border border-teal-500/20 text-xs font-bold">Routage OSPF</span>
+                          <span class="px-4 py-2 rounded-xl bg-teal-500/10 text-teal-400 border border-teal-500/20 text-xs font-bold">VLAN & Trunking</span>
+                          <span class="px-4 py-2 rounded-xl bg-teal-500/10 text-teal-400 border border-teal-500/20 text-xs font-bold">NAT / PAT</span>
+                          <span class="px-4 py-2 rounded-xl bg-white/5 text-gray-300 border border-white/10 text-xs font-bold">Modèle OSI / TCP-UDP</span>
+                          <span class="px-4 py-2 rounded-xl bg-white/5 text-gray-300 border border-white/10 text-xs font-bold">Packet Tracer / Draw.io</span>
+                          <span class="px-4 py-2 rounded-xl bg-white/5 text-gray-300 border border-white/10 text-xs font-bold">mRemoteNG</span>
                       </div>
                   </div>
 
-                  <!-- Réseaux & Sécurité -->
+                  <!-- Cybersécurité -->
                   <div>
-                      <h5 class="text-gray-400 font-bold mb-4 tracking-widest uppercase text-xs">Réseau & Sécurité</h5>
+                      <h5 class="text-gray-400 font-bold mb-4 tracking-widest uppercase text-xs">Cybersécurité & Filtrage</h5>
                       <div class="flex flex-wrap gap-2">
-                          <span class="px-4 py-2 rounded-xl bg-white/5 text-gray-300 border border-white/10 text-xs font-bold">Modèle OSI / TCP-IP</span>
-                          <span class="px-4 py-2 rounded-xl bg-white/5 text-gray-300 border border-white/10 text-xs font-bold">VLAN & Routage</span>
-                          <span class="px-4 py-2 rounded-xl bg-white/5 text-gray-300 border border-white/10 text-xs font-bold">NAT / ACL / VPN</span>
-                          <span class="px-4 py-2 rounded-xl bg-white/5 text-gray-300 border border-white/10 text-xs font-bold">Wireshark</span>
+                          <span class="px-4 py-2 rounded-xl bg-green-500/10 text-green-400 border border-green-500/20 text-xs font-bold">Firewall & ACL</span>
+                          <span class="px-4 py-2 rounded-xl bg-green-500/10 text-green-400 border border-green-500/20 text-xs font-bold">DMZ & VPN</span>
                           <span class="px-4 py-2 rounded-xl bg-green-500/10 text-green-400 border border-green-500/20 text-xs font-bold">Fail2ban</span>
-                          <span class="px-4 py-2 rounded-xl bg-green-500/10 text-green-400 border border-green-500/20 text-xs font-bold">Firewall</span>
+                          <span class="px-4 py-2 rounded-xl bg-white/5 text-gray-300 border border-white/10 text-xs font-bold">Wireshark</span>
+                          <span class="px-4 py-2 rounded-xl bg-white/5 text-gray-300 border border-white/10 text-xs font-bold">Audit RGPD / PIA</span>
                       </div>
                   </div>
 
-                  <!-- Services infrastructure -->
+                  <!-- Systèmes / HA -->
                   <div>
-                      <h5 class="text-gray-400 font-bold mb-4 tracking-widest uppercase text-xs">Services d'Infrastructure</h5>
+                      <h5 class="text-gray-400 font-bold mb-4 tracking-widest uppercase text-xs">Systèmes & Haute Disponibilité</h5>
                       <div class="flex flex-wrap gap-2">
-                          <span class="px-4 py-2 rounded-xl bg-teal-500/10 text-teal-400 border border-teal-500/20 text-xs font-bold">Active Directory</span>
-                          <span class="px-4 py-2 rounded-xl bg-teal-500/10 text-teal-400 border border-teal-500/20 text-xs font-bold">DHCP & DNS</span>
-                          <span class="px-4 py-2 rounded-xl bg-green-500/10 text-green-400 border border-green-500/20 text-xs font-bold">LDAP</span>
-                          <span class="px-4 py-2 rounded-xl bg-green-500/10 text-green-400 border border-green-500/20 text-xs font-bold">GLPI</span>
-                          <span class="px-4 py-2 rounded-xl bg-teal-500/10 text-teal-400 border border-teal-500/20 text-xs font-bold">LAMP (Apache/PHP)</span>
+                          <span class="px-4 py-2 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs font-bold flex items-center gap-2">Proxmox VE</span>
+                          <span class="px-4 py-2 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs font-bold">Corosync / Pacemaker</span>
+                          <span class="px-4 py-2 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs font-bold">Windows Server (AD/GPO)</span>
+                          <span class="px-4 py-2 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs font-bold">DHCP & DNS</span>
+                          <span class="px-4 py-2 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs font-bold">Changement de domaine</span>
+                          <span class="px-4 py-2 rounded-xl bg-orange-500/10 text-orange-400 border border-orange-500/20 text-xs font-bold">Debian 12 / Ubuntu</span>
+                          <span class="px-4 py-2 rounded-xl bg-teal-500/10 text-teal-400 border border-teal-500/20 text-xs font-bold">Docker & Portainer</span>
                       </div>
                   </div>
 
-                  <!-- Scripting & BDD -->
+                  <!-- Scripts et Services -->
                   <div>
-                      <h5 class="text-gray-400 font-bold mb-4 tracking-widest uppercase text-xs">Programmation & Données</h5>
+                      <h5 class="text-gray-400 font-bold mb-4 tracking-widest uppercase text-xs">Services, Scripting & Cloud</h5>
                       <div class="flex flex-wrap gap-2">
-                          <span class="px-4 py-2 rounded-xl bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 text-xs font-bold flex items-center gap-1"><span class="font-mono font-black">❯_</span> Python</span>
-                          <span class="px-4 py-2 rounded-xl bg-teal-400/10 text-teal-300 border border-teal-400/20 text-xs font-bold flex items-center gap-1"><span class="font-mono font-black">❯_</span> PowerShell</span>
-                          <span class="px-4 py-2 rounded-xl bg-orange-500/10 text-orange-400 border border-orange-500/20 text-xs font-bold">SQL (MySQL/MariaDB)</span>
-                          <span class="px-4 py-2 rounded-xl bg-pink-500/10 text-pink-400 border border-pink-500/20 text-xs font-bold">Conformité RGPD / PIA</span>
+                          <span class="px-4 py-2 rounded-xl bg-teal-400/10 text-teal-300 border border-teal-400/20 text-xs font-bold"><span class="font-mono font-black">❯_</span> PowerShell</span>
+                          <span class="px-4 py-2 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20 text-xs font-bold">Microsoft Intune</span>
+                          <span class="px-4 py-2 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20 text-xs font-bold">Power Apps / Automate</span>
+                          <span class="px-4 py-2 rounded-xl bg-white/5 text-gray-300 border border-white/10 text-xs font-bold">Serveur Web (Apache)</span>
+                          <span class="px-4 py-2 rounded-xl bg-white/5 text-gray-300 border border-white/10 text-xs font-bold">Annuaire LDAP</span>
+                          <span class="px-4 py-2 rounded-xl bg-white/5 text-gray-300 border border-white/10 text-xs font-bold">Ticketing GLPI</span>
                       </div>
                   </div>
               </div>
 
               <!-- Bouton vers Projets -->
               <div class="pt-8">
-                <button onclick="navigateTo('projets')" class="w-full py-4 bg-white text-black font-black rounded-2xl hover:bg-green-400 transition-colors shadow-lg active:scale-95">
+                <button onclick="navigateTo('projets')" class="w-full py-4 bg-white text-black font-black rounded-2xl hover:bg-teal-400 transition-colors shadow-lg active:scale-95">
                     Découvrir mes réalisations
                 </button>
               </div>
@@ -438,95 +475,48 @@
              
              <!-- P1: Low Code -->
              <div class="project-card card-hover rounded-[40px] overflow-hidden reveal group">
-               <div class="h-56 bg-[#0d0d14] flex items-center justify-center p-8 relative overflow-hidden">
+               <div class="h-56 bg-[#0d0d14] flex items-center justify-center p-8 relative overflow-hidden gap-6">
                  <div class="absolute inset-0 bg-green-500/5 group-hover:bg-green-500/10 transition-colors"></div>
-                 <svg class="h-32 w-32 relative z-10 transition-transform duration-500 group-hover:scale-110" viewBox="0 0 100 100" fill="none">
-                    <path d="M50 5L10 25V75L50 95L90 75V25L50 5Z" fill="#22c55e" fill-opacity="0.2" stroke="#22c55e" stroke-width="2"/>
-                    <path d="M30 35L50 25L70 35V65L50 75L30 65V35Z" fill="#22c55e"/>
-                 </svg>
+                 <img src="image_0ed827.png" alt="Power Apps" class="h-20 w-20 relative z-10 transition-transform duration-500 group-hover:scale-110 object-contain drop-shadow-lg">
+                 <img src="image_0edae9.png" alt="Power Automate" class="h-20 w-20 relative z-10 transition-transform duration-500 group-hover:scale-110 object-contain drop-shadow-lg">
                </div>
                <div class="p-10">
-                 <h3 class="text-2xl font-bold mb-4 leading-tight">Scan Réseau Low-Code</h3>
-                 <p class="text-gray-400 text-sm mb-8 leading-relaxed">Application mobile simulant un scan réseau via l'écosystème Microsoft Power Platform.</p>
+                 <h3 class="text-2xl font-bold mb-4 leading-tight">Inventaire Réseau Low-Code</h3>
+                 <p class="text-gray-400 text-sm mb-8 leading-relaxed">Création d'une application automatisée de scan réseau liant la Power Platform à des scripts Nmap.</p>
                  <button onclick="openProjectModal(1)" class="w-full py-4 rounded-2xl bg-white text-black font-black hover:bg-green-400 transition-colors">Détails du projet</button>
                </div>
              </div>
 
-             <!-- P2: Architecture Réseau -->
+             <!-- P2: Portainer & Routeur -->
              <div class="project-card card-hover rounded-[40px] overflow-hidden reveal group">
-               <div class="h-56 bg-[#0d0d14] flex items-center justify-center p-12 relative overflow-hidden">
-                 <div class="absolute inset-0 bg-teal-500/5 group-hover:bg-teal-500/10 transition-colors"></div>
-                 <svg class="h-28 w-28 text-teal-400 relative z-10 transition-transform duration-500 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
-               </div>
-               <div class="p-10">
-                 <h3 class="text-2xl font-bold mb-4 leading-tight">Architecture & Routage</h3>
-                 <p class="text-gray-400 text-sm mb-8 leading-relaxed">Conception d'une infrastructure réseau segmentée avec VLAN, Routage et pare-feu.</p>
-                 <button onclick="openProjectModal(2)" class="w-full py-4 rounded-2xl bg-white text-black font-black hover:bg-teal-400 transition-colors">Détails du projet</button>
-               </div>
-             </div>
-
-             <!-- P3: DNS DHCP -->
-             <div class="project-card card-hover rounded-[40px] overflow-hidden reveal group">
-               <div class="h-56 bg-gradient-to-br from-lime-600/10 to-green-900/10 flex items-center justify-center">
-                 <div class="text-center group-hover:scale-110 transition-transform duration-500">
-                    <span class="text-5xl font-black text-white">DNS/DHCP</span>
-                    <p class="mono text-[10px] text-lime-400 font-bold uppercase tracking-[0.3em] mt-2">Hybride Environnement</p>
-                 </div>
-               </div>
-               <div class="p-10">
-                 <h3 class="text-2xl font-bold mb-4 leading-tight">Serveurs DNS & DHCP</h3>
-                 <p class="text-gray-400 text-sm mb-8 leading-relaxed">Implémentation de l'adressage et résolution de noms sous Windows et Linux Debian.</p>
-                 <button onclick="openProjectModal(3)" class="w-full py-4 rounded-2xl bg-white text-black font-black hover:bg-lime-400 transition-colors">Détails du projet</button>
-               </div>
-             </div>
-
-             <!-- P4: Portainer -->
-             <div class="project-card card-hover rounded-[40px] overflow-hidden reveal group">
-                <div class="h-56 bg-[#0a0a0f] flex items-center justify-center p-12 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-green-500/5 group-hover:bg-green-500/10 transition-colors"></div>
-                    <svg class="h-40 w-40 relative z-10 transition-transform duration-500 group-hover:scale-110" viewBox="0 0 24 24" fill="none">
-                        <path d="M13.962 8.161c.656 0 1.29-.051 1.29-.051.102-.006.182-.088.182-.19V6.83c0-.106-.089-.194-.194-.194h-1.278c-.105 0-.194.088-.194.194v1.088c0 .13.111.243.242.243zM13.962 10.14c.656 0 1.29-.051 1.29-.051.102-.006.182-.088.182-.19V8.81c0-.106-.089-.194-.194-.194h-1.278c-.105 0-.194.088-.194.194v1.088c0 .13.111.243.242.243zM23.763 12.356c-.035-.045-.078-.088-.125-.13l-.014-.012c-.221-.19-.447-.369-.675-.542-.511-.387-.991-.707-1.428-1.002-.622-.416-1.166-.757-1.585-1.077-.417-.321-.715-.558-.876-.732-.202-.218-.328-.535-.37-.912-.045-.398-.016-.893.076-1.42.062-.357.142-.71.226-1.059l.01-.044c.002-.006.002-.012.002-.016-.02-.184-.051-.365-.091-.541-.041-.176-.101-.347-.183-.51a.56.56 0 0 0-.289-.276z" fill="#22c55e"/>
-                    </svg>
+                <div class="h-56 bg-[#0a0a0f] flex items-center justify-center p-12 relative overflow-hidden gap-6">
+                    <div class="absolute inset-0 bg-teal-500/5 group-hover:bg-teal-500/10 transition-colors"></div>
+                    <img src="image_0edaf0.png" alt="Docker" class="h-20 w-20 relative z-10 transition-transform duration-500 group-hover:scale-110 object-contain drop-shadow-lg">
+                    <img src="image_0edb08.png" alt="Portainer" class="h-20 w-20 relative z-10 transition-transform duration-500 group-hover:scale-110 object-contain drop-shadow-lg">
                 </div>
                 <div class="p-10">
-                  <h3 class="text-2xl font-bold mb-4 leading-tight">Infrastructure Portainer</h3>
-                  <p class="text-gray-400 text-sm mb-8 leading-relaxed">Conteneurisation de services DNS, DHCP et Web via Docker & Portainer.</p>
-                  <button onclick="openProjectModal(4)" class="w-full py-4 rounded-2xl bg-white text-black font-black hover:bg-green-400 transition-colors">Détails du projet</button>
+                  <h3 class="text-2xl font-bold mb-4 leading-tight">Routeur & Infra Docker</h3>
+                  <p class="text-gray-400 text-sm mb-8 leading-relaxed">Déploiement sous Debian 13 d'un routeur NAT et de services DHCP/DNS conteneurisés via Docker.</p>
+                  <button onclick="openProjectModal(2)" class="w-full py-4 rounded-2xl bg-white text-black font-black hover:bg-teal-400 transition-colors">Détails du projet</button>
                 </div>
              </div>
 
-             <!-- P5: Approbation -->
-             <div class="project-card card-hover rounded-[40px] overflow-hidden reveal group">
-                <div class="h-56 bg-gradient-to-br from-teal-600/10 to-green-900/10 flex items-center justify-center">
-                   <div class="text-center group-hover:scale-110 transition-transform duration-500">
-                      <svg class="w-24 h-24 text-teal-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                      </svg>
-                      <span class="mono text-[10px] text-teal-400 font-bold uppercase tracking-[0.3em]">Active Directory</span>
-                   </div>
-                </div>
-                <div class="p-10">
-                  <h3 class="text-2xl font-bold mb-4 leading-tight">Approbation de domaine</h3>
-                  <p class="text-gray-400 text-sm mb-8 leading-relaxed">Relations de confiance Windows Server pour l'accès inter-forêts aux ressources.</p>
-                  <button onclick="openProjectModal(5)" class="w-full py-4 rounded-2xl bg-white text-black font-black hover:bg-teal-400 transition-colors">Détails du projet</button>
-                </div>
-             </div>
-
-             <!-- P6: Services Linux -->
+             <!-- P3: Haute Disponibilité -->
              <div class="project-card card-hover rounded-[40px] overflow-hidden reveal group">
                 <div class="h-56 bg-[#0a0a0f] flex items-center justify-center relative overflow-hidden">
-                   <div class="absolute inset-0 bg-green-500/5 group-hover:bg-green-500/10 transition-colors"></div>
-                   <div class="text-center group-hover:scale-110 transition-transform duration-500 z-10">
-                      <svg class="w-24 h-24 text-green-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3M13 15h4M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
-                      <span class="mono text-[10px] text-green-400 font-bold uppercase tracking-[0.3em]">LAMP & Sécurité</span>
-                   </div>
+                    <div class="absolute inset-0 bg-blue-500/10 group-hover:bg-blue-500/20 transition-colors z-10"></div>
+                    <svg class="w-32 h-32 text-blue-400 relative z-20 transition-transform duration-500 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
+                    </svg>
+                    <div class="absolute bottom-6 right-6 z-20 flex flex-col items-end gap-2">
+                       <span class="px-3 py-1 bg-blue-500/20 border border-blue-500/20 text-blue-400 font-bold text-[10px] rounded-full uppercase tracking-widest shadow-xl">Corosync</span>
+                       <span class="px-3 py-1 bg-blue-500/20 border border-blue-500/20 text-blue-400 font-bold text-[10px] rounded-full uppercase tracking-widest shadow-xl">HAProxy</span>
+                    </div>
                 </div>
                 <div class="p-10">
-                  <h3 class="text-2xl font-bold mb-4 leading-tight">Services Serveur Linux</h3>
-                  <p class="text-gray-400 text-sm mb-8 leading-relaxed">Déploiement de serveurs Web (Apache), annuaire LDAP, ticketing GLPI et Fail2ban.</p>
-                  <button onclick="openProjectModal(6)" class="w-full py-4 rounded-2xl bg-white text-black font-black hover:bg-green-400 transition-colors">Détails du projet</button>
+                  <h3 class="text-2xl font-bold mb-4 leading-tight">Cluster Haute Dispo (HA)</h3>
+                  <p class="text-gray-400 text-sm mb-8 leading-relaxed">Mise en place de la tolérance aux pannes (Failover) et répartition de charge (Load Balancing).</p>
+                  <button onclick="openProjectModal(3)" class="w-full py-4 rounded-2xl bg-white text-black font-black hover:bg-blue-400 transition-colors">Détails du projet</button>
                 </div>
              </div>
 
@@ -536,51 +526,106 @@
 
       <!-- VEILLE TECHNOLOGIQUE -->
       <section id="page-veille" class="page min-h-screen hidden px-6 py-24">
-        <div class="max-w-6xl mx-auto">
+        <div class="max-w-7xl mx-auto">
            <header class="mb-16 reveal">
-             <h2 class="text-6xl font-black mb-6 italic tracking-tight"><span class="gradient-text">Veille Technologique.</span></h2>
+             <h2 class="text-6xl font-black mb-6 italic tracking-tight"><span class="gradient-text pr-4">Veille Technologique.</span></h2>
              <p class="text-gray-400 text-xl font-light italic">Thème : L'évolution du <strong>SD-WAN</strong> (2024-2026).</p>
            </header>
 
            <div class="grid lg:grid-cols-12 gap-10 items-start">
-             <div class="lg:col-span-5 space-y-6 reveal">
-               <div class="card-hover p-10 rounded-[40px] border-green-500/20 bg-green-500/5">
-                 <h3 class="text-2xl font-bold mb-6 text-green-400 italic flex items-center gap-3">
-                   <span class="w-10 h-px bg-green-400"></span> Évolution 2024-2026
-                 </h3>
-                 <p class="text-gray-300 leading-relaxed mb-6 text-lg">
-                   Ces deux dernières années, le SD-WAN a franchi une étape critique en s'éloignant du simple routage logiciel pour devenir le pilier du modèle <strong>SASE</strong> (Secure Access Service Edge). 
-                 </p>
-                 <p class="text-gray-400 leading-relaxed font-light mb-8 italic">
-                    L'innovation majeure réside dans l'intégration massive de l'<strong>IA (AIOps)</strong>, capable de prédire les congestions de liens et de basculer le trafic avant même que l'utilisateur ne ressente une dégradation. On observe également une convergence totale entre la connectivité 5G privée et le pilotage SD-WAN.
-                 </p>
-                 <div class="space-y-4">
-                    <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5">
-                        <span class="text-2xl">🛡️</span>
-                        <div><p class="text-xs font-bold text-green-400 uppercase">Focus Sécurité</p><p class="text-xs text-gray-500">Convergence SD-WAN & ZTNA</p></div>
-                    </div>
-                    <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5">
-                        <span class="text-2xl">🧠</span>
-                        <div><p class="text-xs font-bold text-green-400 uppercase">Focus IA</p><p class="text-xs text-gray-500">Routage prédictif temps-réel</p></div>
-                    </div>
+             
+             <!-- DOSSIER DÉTAILLÉ DE LA VEILLE (Gauche) -->
+             <div class="lg:col-span-7 space-y-6 reveal">
+               <div class="card-hover rounded-[40px] overflow-hidden flex flex-col h-[700px] border-green-500/20 bg-green-500/5 relative">
+                 <!-- Header fixe du dossier -->
+                 <div class="p-8 border-b border-green-500/10 bg-[#0d1310] sticky top-0 z-10">
+                   <h3 class="text-3xl font-black mb-2 text-white tracking-tight">Dossier de <span class="text-green-400 italic">Synthèse</span></h3>
+                   <p class="text-gray-400 text-sm">De la connectivité hybride à l'intelligence réseau autonome et post-quantique.</p>
+                 </div>
+                 
+                 <!-- Contenu scrollable -->
+                 <div class="p-8 space-y-12 overflow-y-auto flex-1 scroll-smooth [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-green-500/20 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-green-500/40">
+                   
+                   <!-- Intro / Présentation -->
+                   <div class="p-6 rounded-3xl bg-teal-500/10 border border-teal-500/20">
+                     <h4 class="text-lg font-bold text-white mb-3 flex items-center gap-3">
+                        <svg class="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Qu'est-ce que le SD-WAN ?
+                     </h4>
+                     <p class="text-gray-300 text-sm leading-relaxed text-justify">
+                        Le <strong>Software-Defined Wide Area Network</strong> est une architecture réseau qui virtualise le réseau étendu. Il repose sur un principe simple : la séparation du <strong>plan de contrôle</strong> (l'intelligence logicielle centralisée) et du <strong>plan de données</strong> (le matériel physique). Contrairement au routage traditionnel figé, le SD-WAN crée un réseau virtuel (Overlay) capable de router dynamiquement le trafic applicatif sur n'importe quelle liaison sous-jacente (Fibre, MPLS, 5G), garantissant ainsi performance, agilité et sécurité de bout en bout.
+                     </p>
+                   </div>
+
+                   <!-- Frise Chronologique 2024-2026 -->
+                   <div>
+                     <h4 class="text-xl font-bold text-white mb-6">La chronologie de l'évolution (2024-2026)</h4>
+                     <div class="relative border-l-2 border-green-500/30 ml-4 pl-8 space-y-10">
+                         
+                         <!-- 2024 -->
+                         <div class="relative">
+                             <div class="absolute -left-[41px] top-1 w-5 h-5 bg-teal-500 rounded-full border-4 border-[#0d1310] shadow-[0_0_10px_#14b8a6]"></div>
+                             <h5 class="text-lg font-bold text-teal-400 mb-2">2024 : L'Ère de l'Optimisation Applicative</h5>
+                             <p class="text-gray-400 text-sm leading-relaxed text-justify">
+                                 Le SD-WAN franchit le cap de l'agrégation de liens basique. Il devient capable d'identifier la signature des applications (DPI) pour prioriser le trafic critique (comme la VoIP) en temps réel. C'est le début de la réduction drastique de la dépendance aux liaisons MPLS coûteuses au profit de connexions Internet haut débit sécurisées. L'IA fait ses premières apparitions pour l'analyse des flux.
+                             </p>
+                         </div>
+
+                         <!-- 2025 -->
+                         <div class="relative">
+                             <div class="absolute -left-[41px] top-1 w-5 h-5 bg-lime-500 rounded-full border-4 border-[#0d1310] shadow-[0_0_10px_#84cc16]"></div>
+                             <h5 class="text-lg font-bold text-lime-400 mb-2">2025 : La Révolution SASE & ZTNA</h5>
+                             <p class="text-gray-400 text-sm leading-relaxed text-justify">
+                                 Le marché bascule vers le modèle "Single-Vendor SASE" (Secure Access Service Edge). Le réseau et la sécurité cloud fusionnent en une seule plateforme. Le concept de <strong>ZTNA (Zero Trust Network Access)</strong> est intégré nativement, remplaçant les VPN obsolètes. La sécurité ne se base plus sur le périmètre de l'entreprise, mais sur l'identité de l'utilisateur et la posture de sa machine, idéal pour le travail hybride.
+                             </p>
+                         </div>
+
+                         <!-- 2026 -->
+                         <div class="relative">
+                             <!-- Point clignotant pour le présent -->
+                             <div class="absolute -left-[41px] top-1 w-5 h-5 bg-green-400 rounded-full border-4 border-[#0d1310] shadow-[0_0_10px_#22c55e] animate-pulse"></div>
+                             <h5 class="text-lg font-bold text-green-400 mb-2">2026 : Intelligence Autonome & 5G Slicing</h5>
+                             <p class="text-gray-400 text-sm leading-relaxed text-justify">
+                                 Le modèle de gestion devient "No Human in the Loop". Les systèmes <strong>AIOps</strong> anticipent les congestions et réparent le réseau de façon autonome. La <strong>5G Standalone</strong> s'impose comme transport primaire avec le <em>Network Slicing</em>, offrant des canaux garantis (URLLC) pour l'IoT critique. Enfin, face aux menaces futures, les leaders intègrent la <strong>cryptographie post-quantique hybride</strong> pour sécuriser les tunnels de données.
+                             </p>
+                         </div>
+
+                     </div>
+                   </div>
+
+                   <!-- Statistiques d'impact -->
+                   <div class="pt-4 border-t border-white/5">
+                     <h4 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4">L'impact de l'AIOps aujourd'hui</h4>
+                     <div class="grid grid-cols-2 gap-4">
+                         <div class="p-5 rounded-2xl bg-white/5 border border-white/5 shadow-inner">
+                           <span class="block text-3xl font-black text-green-400 mb-1 tracking-tighter">-94%</span>
+                           <span class="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Temps d'arrêt non planifié</span>
+                         </div>
+                         <div class="p-5 rounded-2xl bg-white/5 border border-white/5 shadow-inner">
+                           <span class="block text-3xl font-black text-teal-400 mb-1 tracking-tighter">+50%</span>
+                           <span class="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Vitesse de résolution (MTTR)</span>
+                         </div>
+                     </div>
+                   </div>
+
                  </div>
                </div>
              </div>
 
-             <!-- FLUX RSS LIVE -->
-             <div class="lg:col-span-7 reveal">
+             <!-- FLUX RSS LIVE (Droite) -->
+             <div class="lg:col-span-5 reveal">
                <div class="card-hover rounded-[40px] overflow-hidden flex flex-col h-[700px]">
                  <div class="p-8 border-b border-white/5 flex items-center justify-between bg-white/5">
                    <div class="flex items-center gap-3">
                      <!-- Point lumineux Lime pour indiquer le Live -->
                      <div class="w-3 h-3 bg-lime-500 rounded-full animate-pulse shadow-[0_0_10px_#84cc16]"></div>
-                     <h3 class="font-bold text-sm tracking-widest uppercase text-white">Live Flux : Google Actualités</h3>
+                     <h3 class="font-bold text-sm tracking-widest uppercase text-white">Live Actualités</h3>
                    </div>
                    <button onclick="refreshRSS()" class="p-2 hover:bg-white/10 rounded-full transition-all group" title="Mettre à jour le flux">
                      <svg class="w-5 h-5 text-green-400 group-active:rotate-180 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
                    </button>
                  </div>
-                 <div id="rssContainer" class="p-8 space-y-8 overflow-y-auto flex-1 scroll-smooth">
+                 <div id="rssContainer" class="p-8 space-y-8 overflow-y-auto flex-1 scroll-smooth [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-white/10 [&::-webkit-scrollbar-thumb]:rounded-full">
                      <!-- Les articles vont s'injecter ici via JavaScript -->
                  </div>
                </div>
@@ -590,20 +635,43 @@
         </div>
       </section>
 
-      <!-- SYNTHÈSE -->
-      <section id="page-synthese" class="page min-h-screen hidden px-6 py-24">
-        <div class="max-w-5xl mx-auto text-center text-left">
-           <h2 class="text-6xl font-black mb-16 reveal italic tracking-tight"><span class="gradient-text">Synthèse.</span></h2>
-           <div class="grid md:grid-cols-2 gap-8 reveal">
-             <div class="card-hover p-12 rounded-[50px] border-l-4 border-green-500 text-left">
-               <h3 class="text-3xl font-black mb-4 tracking-tight">Tableau E4</h3>
-               <p class="text-gray-400 mb-10 leading-relaxed text-sm">Support et mise à disposition de services informatiques.</p>
-               <button class="px-10 py-4 bg-white text-black font-black rounded-2xl hover:bg-green-400 transition-all active:scale-95 shadow-lg">Consulter PDF</button>
-             </div>
-             <div class="card-hover p-12 rounded-[50px] border-l-4 border-teal-500 text-left">
-               <h3 class="text-3xl font-black mb-4 tracking-tight">Tableau E5</h3>
-               <p class="text-gray-400 mb-10 leading-relaxed text-sm">Cybersécurité et administration des systèmes.</p>
-               <button class="px-10 py-4 bg-white text-black font-black rounded-2xl hover:bg-teal-400 transition-all active:scale-95 shadow-lg">Consulter PDF</button>
+      <!-- CONCLUSION & CONTACT (Remplace l'ancienne Synthèse) -->
+      <section id="page-synthese" class="page min-h-screen hidden px-6 py-24 flex items-center justify-center">
+        <div class="max-w-4xl mx-auto w-full">
+           <header class="mb-16 text-center reveal">
+             <h2 class="text-6xl font-black mb-6 italic tracking-tight"><span class="gradient-text">Conclusion.</span></h2>
+           </header>
+           
+           <div class="reveal">
+             <div class="card-hover p-12 md:p-16 rounded-[50px] border-t-4 border-green-500 text-center relative overflow-hidden shadow-2xl bg-white/5">
+               <!-- Éléments décoratifs de fond -->
+               <div class="absolute right-0 top-0 w-64 h-64 bg-green-500/10 rounded-full blur-3xl pointer-events-none"></div>
+               <div class="absolute left-0 bottom-0 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
+               
+               <div class="relative z-10 space-y-8">
+                 <h3 class="text-4xl font-black tracking-tight text-white mb-6">Merci de votre visite !</h3>
+                 <p class="text-gray-300 leading-relaxed text-lg text-justify md:text-center px-4">
+                   Ce portfolio retrace mon évolution au cours de ces deux années de BTS SIO SISR. De mes premiers pas en support technique jusqu'à la conception d'architectures réseau redondantes et hautement disponibles chez SLB, chaque projet a renforcé ma passion pour les infrastructures et la cybersécurité. Je suis désormais prêt à mettre mes compétences au service de nouveaux défis professionnels.
+                 </p>
+
+                 <!-- Coordonnées de contact -->
+                 <div class="flex flex-col md:flex-row items-center justify-center gap-10 py-10 border-y border-white/10 my-10">
+                   <div class="flex items-center gap-4 group">
+                     <span class="p-4 rounded-full bg-white/5 text-green-400 border border-white/10 group-hover:scale-110 group-hover:bg-green-500/20 transition-all shadow-lg"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></span>
+                     <a href="mailto:selyan.boudia92@gmail.com" class="text-xl md:text-2xl font-bold hover:text-green-400 transition-colors">selyan.boudia92@gmail.com</a>
+                   </div>
+                   <div class="flex items-center gap-4 group">
+                     <span class="p-4 rounded-full bg-white/5 text-teal-400 border border-white/10 group-hover:scale-110 group-hover:bg-teal-500/20 transition-all shadow-lg"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg></span>
+                     <a href="tel:+33778797786" class="text-xl md:text-2xl font-bold hover:text-teal-400 transition-colors">07 78 79 77 86</a>
+                   </div>
+                 </div>
+
+                 <!-- Lien Drive vers Matrice -->
+                 <a href="https://docs.google.com/spreadsheets/d/18KAcJx__NNTOTPGPWmDc5V3GKiuaTU5T/edit?usp=drive_link&ouid=117231231083856052079&rtpof=true&sd=true" target="_blank" class="inline-flex items-center justify-center gap-3 px-10 py-5 bg-gradient-to-r from-green-500 to-teal-600 text-white font-black rounded-full hover:scale-105 transition-all active:scale-95 shadow-[0_0_30px_rgba(34,197,94,0.3)] text-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    Consulter ma Matrice de Compétences (Drive)
+                 </a>
+               </div>
              </div>
            </div>
         </div>
@@ -677,7 +745,6 @@
 
     function initParticles() {
       particles = [];
-      // Ajuste le nombre de particules en fonction de la taille de l'écran
       let numParticles = Math.floor((width * height) / 12000); 
       for (let i = 0; i < numParticles; i++) {
         particles.push(new Particle());
@@ -690,7 +757,6 @@
         particles[i].update();
         particles[i].draw();
 
-        // Connecter les particules entre elles
         for (let j = i; j < particles.length; j++) {
           let dx = particles[i].x - particles[j].x;
           let dy = particles[i].y - particles[j].y;
@@ -698,7 +764,7 @@
           
           if (dist < 120) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(34, 197, 94, ${0.15 - dist/800})`; // Lignes vertes transparentes
+            ctx.strokeStyle = `rgba(34, 197, 94, ${0.15 - dist/800})`; 
             ctx.lineWidth = 0.5;
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
@@ -706,7 +772,6 @@
           }
         }
 
-        // Interaction avec la souris
         if (mouse.x != null && mouse.y != null) {
           let dx = particles[i].x - mouse.x;
           let dy = particles[i].y - mouse.y;
@@ -714,13 +779,12 @@
           
           if (dist < mouse.radius) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(20, 184, 166, ${0.4 - dist/(mouse.radius*2.5)})`; // Lignes vers la souris
+            ctx.strokeStyle = `rgba(20, 184, 166, ${0.4 - dist/(mouse.radius*2.5)})`; 
             ctx.lineWidth = 1;
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(mouse.x, mouse.y);
             ctx.stroke();
             
-            // Repousser légèrement les particules
             particles[i].x += dx * 0.02;
             particles[i].y += dy * 0.02;
           }
@@ -729,7 +793,6 @@
       requestAnimationFrame(animateParticles);
     }
 
-    // Initialisation de l'animation
     resizeCanvas();
     animateParticles();
 
@@ -737,68 +800,45 @@
     /* DONNEES DES PROJETS */
     const projectDetails = {
       1: {
-        title: 'Application Scan Réseau Low-Code',
-        category: 'Gestion de Projet / Low-Code',
-        description: `Dans le cadre de ma formation, j'ai conçu une application <strong>Low Code</strong> (avec très peu de programmation) pour répondre rapidement à un besoin métier et tester une solution simple à déployer.
-        <br><br>
-        <strong class="text-white text-xl block mb-4">🚀 Étapes de réalisation :</strong>
-        <ul class="list-disc pl-6 space-y-3 text-lg">
-            <li><strong>Contexte & Conception (7 fév - 6 mars 2024) :</strong> Analyse du besoin métier, structuration des données et création de l'interface utilisateur (formulaires, écrans).</li>
-            <li><strong>Configuration & Dev (13 mars - 20 mars 2024) :</strong> Utilisation d'une plateforme Low Code, mise en place des fonctionnalités et automatisation d'actions métiers sans coder.</li>
-            <li><strong>Tests (27 mars - 3 avril 2024) :</strong> Vérification du bon fonctionnement global, correction des erreurs (débogage) et validation finale du produit.</li>
-        </ul>
-        <br>
-        <strong class="text-white text-xl block mb-2">🎯 Objectifs atteints :</strong> 
-        <span class="text-lg">Déploiement d'une solution totalement fonctionnelle offrant un gain de temps considérable par rapport au développement classique. Ce projet m'a permis de développer une vraie logique de gestion de projet de A à Z.</span>`,
-        icon: `<svg class="h-full w-full p-8" viewBox="0 0 100 100"><path d="M50 5L10 25V75L50 95L90 75V25L50 5Z" fill="#22c55e" fill-opacity="0.2" stroke="#22c55e" stroke-width="2"/><path d="M30 35L50 25L70 35V65L50 75L30 65V35Z" fill="#22c55e"/></svg>`,
-        tasks: ['Analyse des besoins', 'Conception de l\'application', 'Utilisation d\'un outil Low Code', 'Tests et validation', 'Gestion de projet'],
-        techs: ['Power Apps', 'Power Automate', 'Low-Code', 'Automation'],
+        title: 'Application Inventaire Réseau Low-Code',
+        category: 'Automatisation / Low-Code',
+        description: `Création d'une application permettant de scanner un réseau, d'identifier les machines actives et d'afficher leurs informations en croisant les technologies Microsoft et le scripting.<br><br>
+        <strong class="text-white text-xl block mb-4">🚀 Architecture et Fonctionnement :</strong>
+        <p class="text-gray-300 leading-relaxed mb-4">L'utilisateur saisit une plage IP dans <strong class="text-green-400">Power Apps</strong>, ce qui déclenche un flux <strong class="text-green-400">Power Automate</strong>. Ce flux appelle un script externe (exécutant <strong class="text-white">Nmap</strong>) pour scanner le réseau. Les résultats sont ensuite formatés en <strong class="text-white">JSON</strong> et renvoyés à l'application mobile pour affichage.</p>
+        <p class="text-gray-400 text-sm italic">Ce projet a nécessité de surmonter la complexité de communication entre l'environnement cloud de Power Automate et un script réseau local (Nmap), ouvrant la voie à de futures améliorations comme des alertes ou un historique des scans.</p>`,
+        icon: `<div class="flex gap-4"><img src="image_0ed827.png" class="h-20 w-20 object-contain"><img src="image_0edae9.png" class="h-20 w-20 object-contain"></div>`,
+        tasks: ['Architecture d\'un flux Utilisateur → Power Apps → Automate → Script Nmap → Résultats', 'Création de l\'interface utilisateur sur Power Apps', 'Déploiement de scripts de scan réseau et manipulation de données JSON'],
+        techs: ['Power Apps', 'Power Automate', 'Nmap', 'JSON / Scripting'],
         color: 'green'
       },
       2: {
-        title: 'Architecture & Sécurité Réseau',
-        category: 'Infrastructures / Réseaux',
-        description: 'Conception technique d\'une architecture réseau d\'entreprise avec mise en place de la <strong>segmentation logique</strong> (VLAN) et du <strong>routage inter-VLAN</strong>. Mise en pratique directe de concepts de cybersécurité comme le filtrage via Access Control Lists (ACL).',
-        icon: `<svg class="h-full w-full p-12 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>`,
-        tasks: ['Définition de la topologie réseau', 'Configuration de VLAN sur commutateurs Cisco', 'Création de règles de Firewall et ACLs', 'Analyse de trames avec Wireshark'],
-        techs: ['Cisco IOS', 'VLAN / Routage', 'ACL', 'Wireshark', 'TCP/IP'],
+        title: 'Routeur Linux & Infrastructure Docker',
+        category: 'Réseaux / Conteneurisation',
+        description: `Conception d'une infrastructure réseau robuste et segmentée sous Debian 13, démontrant la maîtrise du modèle OSI et de l'Infrastructure As Code.<br><br>
+        <strong class="text-white text-xl block mb-4">⚙️ Rôles et Architecture déployée :</strong>
+        <ul class="list-disc pl-6 space-y-3 text-lg text-gray-300">
+            <li><strong>Routeur Linux (192.168.100.1) :</strong> Gestion de la passerelle vers Internet avec traduction d'adresses (NAT/Masquerade) via des règles strictes <em>iptables</em>.</li>
+            <li><strong>Serveur Docker (192.168.100.10) :</strong> Hébergement des services réseau. Utilisation spécifique du <code>network_mode: host</code> dans Portainer pour permettre la diffusion des trames de broadcast DHCP au niveau de la couche liaison.</li>
+            <li><strong>Services Réseau :</strong> Conteneurisation du serveur DHCP (<em>dnsmasq</em>) et du serveur DNS Forwarder (<em>CoreDNS</em>) pour isoler les rôles critiques.</li>
+        </ul>`,
+        icon: `<div class="flex gap-4"><img src="image_0edaf0.png" class="h-24 w-24 object-contain"><img src="image_0edb08.png" class="h-24 w-24 object-contain"></div>`,
+        tasks: ['Configuration du routage et NAT via iptables (iptables-persistent)', 'Déploiement Docker & Portainer avec gestion des volumes de persistance', 'Mise en place d\'un serveur DHCP (dnsmasq) conteneurisé', 'Configuration d\'un relais DNS (CoreDNS)'],
+        techs: ['Debian 13', 'Docker', 'Portainer', 'iptables', 'dnsmasq', 'CoreDNS'],
         color: 'teal'
       },
       3: {
-        title: 'Infrastructure DNS & DHCP',
-        category: 'Systèmes Hybrides',
-        description: 'Mise en place de la pile protocolaire fondamentale d\'un réseau local. Installation du rôle DHCP sur <strong>Windows Server</strong> et configuration du serveur DNS récursif sous <strong>Linux Debian</strong> via BIND9.',
-        icon: `<svg class="h-full w-full p-12 text-lime-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>`,
-        tasks: ['Adressage IP dynamique et réservations', 'Résolution de noms BIND9', 'Intégration d\'hôtes dans le domaine', 'Tests réseau : ping, tracert, nslookup'],
-        techs: ['Windows Server', 'Linux Debian', 'BIND9', 'DHCP Server'],
-        color: 'lime'
-      },
-      4: {
-        title: 'Infrastructure Portainer',
-        category: 'Micro-services / Docker',
-        description: 'Déploiement d\'un environnement de conteneurisation complet géré par <strong>Portainer</strong>. Cette infrastructure permet d\'isoler et d\'orchestrer des services critiques comme des serveurs DHCP, DNS réplicats et des instances Web haute performance.',
-        icon: `<svg class="h-full w-full p-12" viewBox="0 0 24 24" fill="#22c55e"><path d="M13.962 8.161c.656 0 1.29-.051 1.29-.051.102-.006.182-.088.182-.19V6.83c0-.106-.089-.194-.194-.194h-1.278c-.105 0-.194.088-.194.194v1.088c0 .13.111.243.242.243zM13.962 10.14c.656 0 1.29-.051 1.29-.051.102-.006.182-.088.182-.19V8.81c0-.106-.089-.194-.194-.194h-1.278c-.105 0-.194.088-.194.194v1.088c0 .13.111.243.242.243zM23.763 12.356c-.035-.045-.078-.088-.125-.13l-.014-.012c-.221-.19-.447-.369-.675-.542-.511-.387-.991-.707-1.428-1.002-.622-.416-1.166-.757-1.585-1.077-.417-.321-.715-.558-.876-.732-.202-.218-.328-.535-.37-.912-.045-.398-.016-.893.076-1.42.062-.357.142-.71.226-1.059l.01-.044c.002-.006.002-.012.002-.016-.02-.184-.051-.365-.091-.541-.041-.176-.101-.347-.183-.51a.56.56 0 0 0-.289-.276z"/></svg>`,
-        tasks: ['Isolation via Docker', 'Orchestration Portainer', 'Management des volumes', 'Conteneurs DHCP/DNS/Web'],
-        techs: ['Docker', 'Portainer', 'Virtualisation', 'Micro-services'],
-        color: 'green'
-      },
-      5: {
-        title: 'Administration & Approbation AD',
-        category: 'Active Directory / Sécurité',
-        description: 'Administration poussée d\'un environnement <strong>Active Directory</strong> avec la gestion fine des comptes (UOs, GPO, groupes de sécurité) et l\'établissement de <strong>relations d\'approbation</strong> (Trust) entre différentes forêts Windows Server.',
-        icon: `<svg class="h-full w-full p-12 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>`,
-        tasks: ['Création et application de GPO (Stratégies de groupe)', 'Trust inter-forêts & DNS Forwarders', 'Authentification Kerberos', 'Gestion des dossiers partagés (SMB/NFS)'],
-        techs: ['Windows Server', 'Active Directory', 'GPO', 'Sécurité'],
-        color: 'teal'
-      },
-      6: {
-        title: 'Services Serveurs Linux',
-        category: 'Administration Système',
-        description: 'Étude et déploiement de services essentiels en entreprise sous <strong>Linux</strong>. Le projet couvre l\'hébergement dynamique, l\'annuaire centralisé, et la protection active contre les attaques réseaux (bruteforce, DDoS).',
-        icon: `<svg class="h-full w-full p-12 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M8 9l3 3-3 3M13 15h4M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>`,
-        tasks: ['Déploiement de la pile LAMP (Linux, Apache, MySQL, PHP)', 'Mise en place de l\'outil GLPI pour la gestion de parc', 'Intégration d\'un annuaire LDAP', 'Configuration de sécurité avec Fail2ban'],
-        techs: ['Apache2', 'MariaDB', 'GLPI', 'LDAP', 'Fail2ban'],
-        color: 'green'
+        title: 'Cluster Haute Disponibilité (HA)',
+        category: 'Systèmes Critiques / Résilience',
+        description: `Mise en œuvre de deux principes fondamentaux de continuité de service en entreprise pour une infrastructure Web (Apache2) sous Debian 12.<br><br>
+        <strong class="text-white text-xl block mb-4">🛡️ Mécanismes implémentés :</strong>
+        <ul class="list-disc pl-6 space-y-3 text-lg text-gray-300">
+            <li><strong>Bascule automatique (Failover) :</strong> Utilisation de <em>Corosync</em> et <em>Pacemaker</em> entre les serveurs NOEUD1 (101) et NOEUD2 (102) pour gérer dynamiquement une <strong>Floating IP</strong> (192.168.100.104). Le service bascule instantanément en cas de défaillance matérielle.</li>
+            <li><strong>Répartition de charge (Load Balancing) :</strong> Configuration d'un serveur <em>HAProxy</em> (192.168.100.103) utilisant l'algorithme "Round Robin" pour distribuer équitablement les requêtes HTTP et détecter proactivement les serveurs défaillants (health checks).</li>
+        </ul>`,
+        icon: `<div class="w-full h-full bg-blue-500/10 flex items-center justify-center rounded-[30px] border border-blue-500/20"><svg class="w-24 h-24 text-blue-400 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg></div>`,
+        tasks: ['Création d\'un cluster actif/passif avec Corosync & Pacemaker', 'Gestion du réseau COEUR et bascule de la Floating IP', 'Configuration du Load Balancer HAProxy avec algorithme Round Robin', 'Déploiement et synchronisation de nœuds web Apache2'],
+        techs: ['Corosync', 'Pacemaker', 'HAProxy', 'Debian 12', 'Apache2'],
+        color: 'blue'
       }
     };
 
@@ -808,7 +848,6 @@
       container.style.opacity = '0';
       
       setTimeout(async () => {
-        // Animation de chargement
         container.innerHTML = `
             <div class="flex flex-col justify-center items-center h-full opacity-50 space-y-4">
                 <div class="w-10 h-10 border-4 border-green-400 border-t-transparent rounded-full animate-spin"></div>
