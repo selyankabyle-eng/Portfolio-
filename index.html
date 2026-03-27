@@ -98,7 +98,6 @@
     <div class="blob w-[500px] h-[500px] bg-teal-600/10 top-1/2 right-[-5%]" style="animation-delay: -3s;"></div>
   </div>
 
-  <!-- NOUVEAU : CANVAS POUR L'EFFET DE RÉSEAU INTERACTIF -->
   <canvas id="networkCanvas" class="fixed inset-0 pointer-events-none z-[1] opacity-40"></canvas>
 
   <div id="app" class="h-full w-full overflow-auto relative z-10">
@@ -113,7 +112,7 @@
             <a href="#" onclick="navigateTo('competences')" class="nav-link text-xs font-bold tracking-widest uppercase text-gray-400" data-page="competences">Compétences</a>
             <a href="#" onclick="navigateTo('projets')" class="nav-link text-xs font-bold tracking-widest uppercase text-gray-400" data-page="projets">Projets</a>
             <a href="#" onclick="navigateTo('veille')" class="nav-link text-xs font-bold tracking-widest uppercase text-gray-400" data-page="veille">Veille</a>
-            <a href="#" onclick="navigateTo('synthese')" class="nav-link text-xs font-bold tracking-widest uppercase text-gray-400" data-page="synthese">Synthèse</a>
+            <a href="#" onclick="navigateTo('synthese')" class="nav-link text-xs font-bold tracking-widest uppercase text-gray-400" data-page="synthese">Conclusion</a>
           </div>
           <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-white">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
@@ -125,7 +124,7 @@
           <a href="#" onclick="navigateTo('competences'); toggleMobileMenu();" class="block text-xl font-bold">Compétences</a>
           <a href="#" onclick="navigateTo('projets'); toggleMobileMenu();" class="block text-xl font-bold">Projets</a>
           <a href="#" onclick="navigateTo('veille'); toggleMobileMenu();" class="block text-xl font-bold">Veille</a>
-          <a href="#" onclick="navigateTo('synthese'); toggleMobileMenu();" class="block text-xl font-bold">Synthèse</a>
+          <a href="#" onclick="navigateTo('synthese'); toggleMobileMenu();" class="block text-xl font-bold">Conclusion</a>
       </div>
     </nav>
 
@@ -212,18 +211,15 @@
             <div>
               <h3 class="text-4xl font-black mb-8 flex items-center gap-4 tracking-tight"><span class="text-green-400">💼</span> Expériences Professionnelles</h3>
               
-              <!-- NOUVEAU : Bloc Présentation SLB avec Logo SVG 100% Intégré -->
+              <!-- Présentation SLB avec Logo -->
               <div class="card-hover p-8 md:p-10 rounded-[40px] border-blue-500/20 bg-blue-500/5 mb-16 flex flex-col md:flex-row gap-10 items-center md:items-start relative overflow-hidden">
                  <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
                  
-                 <!-- Logo SLB (Code SVG Intégré : Ne casse jamais et prend la couleur du texte) -->
+                 <!-- Logo SLB -->
                  <div class="p-6 rounded-[30px] flex-shrink-0 w-40 h-40 flex items-center justify-center bg-blue-500/10 border border-blue-500/20 shadow-inner relative z-10 text-white">
                      <svg viewBox="0 0 300 150" class="w-full h-full drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]" fill="currentColor">
-                        <!-- Forme gauche -->
                         <path d="M 20,40 L 20,110 L 120,110 C 80,110 50,40 20,40 Z" />
-                        <!-- Texte SLB stylisé -->
                         <text x="130" y="112" font-family="Arial, Helvetica, sans-serif" font-weight="bold" font-size="95" letter-spacing="-4">slb</text>
-                        <!-- Forme droite -->
                         <path d="M 160,125 L 280,125 L 280,150 C 220,150 180,140 160,125 Z" />
                      </svg>
                  </div>
@@ -475,9 +471,13 @@
              
              <!-- P1: Low Code -->
              <div class="project-card card-hover rounded-[40px] overflow-hidden reveal group">
-               <div class="h-56 bg-[#0d0d14] flex items-center justify-center p-8 relative overflow-hidden">
+               <div class="h-56 bg-[#0d0d14] flex items-center justify-center p-8 relative overflow-hidden gap-6">
                  <div class="absolute inset-0 bg-green-500/5 group-hover:bg-green-500/10 transition-colors"></div>
-                 <img src="image_101dc4.png" alt="Application Low-Code" class="h-32 w-auto max-w-[80%] relative z-10 transition-transform duration-500 group-hover:scale-110 object-contain drop-shadow-2xl">
+                 
+                 <!-- Vos vraies images pour le projet 1 -->
+                 <img src="image_0ed827.png" alt="Power Apps" class="h-24 w-24 relative z-10 transition-transform duration-500 group-hover:scale-110 object-contain drop-shadow-[0_0_15px_rgba(168,85,247,0.4)]">
+                 <img src="image_0edae9.png" alt="Power Automate" class="h-24 w-24 relative z-10 transition-transform duration-500 group-hover:scale-110 object-contain drop-shadow-[0_0_15px_rgba(59,130,246,0.4)]">
+                 
                </div>
                <div class="p-10">
                  <h3 class="text-2xl font-bold mb-4 leading-tight">Inventaire Réseau Low-Code</h3>
@@ -490,6 +490,7 @@
              <div class="project-card card-hover rounded-[40px] overflow-hidden reveal group">
                 <div class="h-56 bg-[#0a0a0f] flex items-center justify-center p-12 relative overflow-hidden">
                     <div class="absolute inset-0 bg-teal-500/5 group-hover:bg-teal-500/10 transition-colors"></div>
+                    <!-- Votre vraie image pour le projet 2 -->
                     <img src="image_101e02.png" alt="Infrastructure Docker" class="h-32 w-auto max-w-[80%] relative z-10 transition-transform duration-500 group-hover:scale-110 object-contain drop-shadow-2xl">
                 </div>
                 <div class="p-10">
@@ -503,6 +504,7 @@
              <div class="project-card card-hover rounded-[40px] overflow-hidden reveal group">
                 <div class="h-56 bg-[#0a0a0f] flex items-center justify-center p-12 relative overflow-hidden">
                     <div class="absolute inset-0 bg-blue-500/5 group-hover:bg-blue-500/10 transition-colors"></div>
+                    <!-- Votre vraie image pour le projet 3 -->
                     <img src="image_102586.png" alt="Cluster Haute Disponibilité" class="h-32 w-auto max-w-[80%] relative z-10 transition-transform duration-500 group-hover:scale-110 object-contain drop-shadow-2xl">
                 </div>
                 <div class="p-10">
@@ -627,7 +629,7 @@
         </div>
       </section>
 
-      <!-- CONCLUSION & CONTACT (Remplace l'ancienne Synthèse) -->
+      <!-- CONCLUSION & CONTACT -->
       <section id="page-synthese" class="page min-h-screen hidden px-6 py-24 flex items-center justify-center">
         <div class="max-w-4xl mx-auto w-full">
            <header class="mb-16 text-center reveal">
@@ -798,7 +800,10 @@
         <strong class="text-white text-xl block mb-4">🚀 Architecture et Fonctionnement :</strong>
         <p class="text-gray-300 leading-relaxed mb-4">L'utilisateur saisit une plage IP dans <strong class="text-green-400">Power Apps</strong>, ce qui déclenche un flux <strong class="text-green-400">Power Automate</strong>. Ce flux appelle un script externe (exécutant <strong class="text-white">Nmap</strong>) pour scanner le réseau. Les résultats sont ensuite formatés en <strong class="text-white">JSON</strong> et renvoyés à l'application mobile pour affichage.</p>
         <p class="text-gray-400 text-sm italic">Ce projet a nécessité de surmonter la complexité de communication entre l'environnement cloud de Power Automate et un script réseau local (Nmap), ouvrant la voie à de futures améliorations comme des alertes ou un historique des scans.</p>`,
-        icon: `<img src="image_101dc4.png" class="h-full w-full object-contain p-4 drop-shadow-2xl">`,
+        icon: `<div class="flex gap-6 items-center justify-center h-full w-full">
+                 <img src="image_0ed827.png" class="h-24 w-24 object-contain drop-shadow-2xl">
+                 <img src="image_0edae9.png" class="h-24 w-24 object-contain drop-shadow-2xl">
+               </div>`,
         tasks: ['Architecture d\'un flux Utilisateur → Power Apps → Automate → Script Nmap → Résultats', 'Création de l\'interface utilisateur sur Power Apps', 'Déploiement de scripts de scan réseau et manipulation de données JSON'],
         techs: ['Power Apps', 'Power Automate', 'Nmap', 'JSON / Scripting'],
         color: 'green'
