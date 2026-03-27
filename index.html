@@ -501,13 +501,9 @@
 
              <!-- P3: Haute Disponibilité -->
              <div class="project-card card-hover rounded-[40px] overflow-hidden reveal group">
-                <div class="h-56 bg-[#0a0a0f] flex items-center justify-center relative overflow-hidden">
-                    <div class="absolute inset-0 bg-blue-500/20 group-hover:bg-blue-500/30 transition-colors z-10"></div>
-                    <img src="image_101af9.jpg" alt="Cluster Haute Disponibilité" class="absolute inset-0 h-full w-full object-cover opacity-60 transition-transform duration-700 group-hover:scale-110 group-hover:opacity-100">
-                    <div class="absolute bottom-6 right-6 z-20 flex flex-col items-end gap-2">
-                       <span class="px-3 py-1 bg-black/50 backdrop-blur-md border border-blue-500/20 text-blue-400 font-bold text-[10px] rounded-full uppercase tracking-widest shadow-xl">Corosync</span>
-                       <span class="px-3 py-1 bg-black/50 backdrop-blur-md border border-blue-500/20 text-blue-400 font-bold text-[10px] rounded-full uppercase tracking-widest shadow-xl">HAProxy</span>
-                    </div>
+                <div class="h-56 bg-[#0a0a0f] flex items-center justify-center p-12 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-blue-500/5 group-hover:bg-blue-500/10 transition-colors"></div>
+                    <img src="image_102586.png" alt="Cluster Haute Disponibilité" class="h-32 w-auto max-w-[80%] relative z-10 transition-transform duration-500 group-hover:scale-110 object-contain drop-shadow-2xl">
                 </div>
                 <div class="p-10">
                   <h3 class="text-2xl font-bold mb-4 leading-tight">Cluster Haute Dispo (HA)</h3>
@@ -831,7 +827,7 @@
             <li><strong>Bascule automatique (Failover) :</strong> Utilisation de <em>Corosync</em> et <em>Pacemaker</em> entre les serveurs NOEUD1 (101) et NOEUD2 (102) pour gérer dynamiquement une <strong>Floating IP</strong> (192.168.100.104). Le service bascule instantanément en cas de défaillance matérielle.</li>
             <li><strong>Répartition de charge (Load Balancing) :</strong> Configuration d'un serveur <em>HAProxy</em> (192.168.100.103) utilisant l'algorithme "Round Robin" pour distribuer équitablement les requêtes HTTP et détecter proactivement les serveurs défaillants (health checks).</li>
         </ul>`,
-        icon: `<img src="image_101af9.jpg" class="h-full w-full object-cover rounded-[30px] shadow-inner opacity-90">`,
+        icon: `<img src="image_102586.png" class="h-full w-full object-contain p-4 drop-shadow-2xl">`,
         tasks: ['Création d\'un cluster actif/passif avec Corosync & Pacemaker', 'Gestion du réseau COEUR et bascule de la Floating IP', 'Configuration du Load Balancer HAProxy avec algorithme Round Robin', 'Déploiement et synchronisation de nœuds web Apache2'],
         techs: ['Corosync', 'Pacemaker', 'HAProxy', 'Debian 12', 'Apache2'],
         color: 'blue'
