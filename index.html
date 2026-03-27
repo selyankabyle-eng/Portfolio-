@@ -471,12 +471,9 @@
              
              <!-- P1: Low Code -->
              <div class="project-card card-hover rounded-[40px] overflow-hidden reveal group">
-               <div class="h-56 bg-[#0d0d14] flex items-center justify-center p-8 relative overflow-hidden">
+               <div class="h-56 bg-[#0d0d14] p-8 relative overflow-hidden">
                  <div class="absolute inset-0 bg-green-500/5 group-hover:bg-green-500/10 transition-colors"></div>
-                 
-                 <!-- Nouvelle image Projet 1 -->
-                 <img src="image_103485.png" alt="Inventaire Réseau Low-Code" class="h-32 w-auto max-w-[80%] relative z-10 transition-transform duration-500 group-hover:scale-110 object-contain drop-shadow-2xl">
-                 
+                 <img src="image_103485.png" alt="Inventaire Réseau Low-Code" class="h-full w-full object-contain object-left-top relative z-10 opacity-90 group-hover:opacity-100 transition-opacity duration-300">
                </div>
                <div class="p-10">
                  <h3 class="text-2xl font-bold mb-4 leading-tight">Inventaire Réseau Low-Code</h3>
@@ -487,10 +484,9 @@
 
              <!-- P2: Portainer & Routeur -->
              <div class="project-card card-hover rounded-[40px] overflow-hidden reveal group">
-                <div class="h-56 bg-[#0a0a0f] flex items-center justify-center p-12 relative overflow-hidden">
+                <div class="h-56 bg-[#0a0a0f] p-8 relative overflow-hidden">
                     <div class="absolute inset-0 bg-teal-500/5 group-hover:bg-teal-500/10 transition-colors"></div>
-                    <!-- Nouvelle image Projet 2 -->
-                    <img src="image_103502.png" alt="Infrastructure Docker" class="h-32 w-auto max-w-[80%] relative z-10 transition-transform duration-500 group-hover:scale-110 object-contain drop-shadow-2xl">
+                    <img src="image_103502.png" alt="Infrastructure Docker" class="h-full w-full object-contain object-left-top relative z-10 opacity-90 group-hover:opacity-100 transition-opacity duration-300">
                 </div>
                 <div class="p-10">
                   <h3 class="text-2xl font-bold mb-4 leading-tight">Routeur & Infra Docker</h3>
@@ -501,10 +497,9 @@
 
              <!-- P3: Haute Disponibilité -->
              <div class="project-card card-hover rounded-[40px] overflow-hidden reveal group">
-                <div class="h-56 bg-[#0a0a0f] flex items-center justify-center p-12 relative overflow-hidden">
+                <div class="h-56 bg-[#0a0a0f] p-8 relative overflow-hidden">
                     <div class="absolute inset-0 bg-blue-500/5 group-hover:bg-blue-500/10 transition-colors"></div>
-                    <!-- Nouvelle image Projet 3 -->
-                    <img src="image_10353f.png" alt="Cluster Haute Disponibilité" class="h-32 w-auto max-w-[80%] relative z-10 transition-transform duration-500 group-hover:scale-110 object-contain drop-shadow-2xl">
+                    <img src="image_10353f.png" alt="Cluster Haute Disponibilité" class="h-full w-full object-contain object-left-top relative z-10 opacity-90 group-hover:opacity-100 transition-opacity duration-300">
                 </div>
                 <div class="p-10">
                   <h3 class="text-2xl font-bold mb-4 leading-tight">Cluster Haute Dispo (HA)</h3>
@@ -799,7 +794,7 @@
         <strong class="text-white text-xl block mb-4">🚀 Architecture et Fonctionnement :</strong>
         <p class="text-gray-300 leading-relaxed mb-4">L'utilisateur saisit une plage IP dans <strong class="text-green-400">Power Apps</strong>, ce qui déclenche un flux <strong class="text-green-400">Power Automate</strong>. Ce flux appelle un script externe (exécutant <strong class="text-white">Nmap</strong>) pour scanner le réseau. Les résultats sont ensuite formatés en <strong class="text-white">JSON</strong> et renvoyés à l'application mobile pour affichage.</p>
         <p class="text-gray-400 text-sm italic">Ce projet a nécessité de surmonter la complexité de communication entre l'environnement cloud de Power Automate et un script réseau local (Nmap), ouvrant la voie à de futures améliorations comme des alertes ou un historique des scans.</p>`,
-        icon: `<img src="image_103485.png" class="h-full w-full object-contain p-4 drop-shadow-2xl">`,
+        icon: `<img src="image_103485.png" class="h-full w-full object-contain object-left-top p-6 opacity-90">`,
         tasks: ['Architecture d\'un flux Utilisateur → Power Apps → Automate → Script Nmap → Résultats', 'Création de l\'interface utilisateur sur Power Apps', 'Déploiement de scripts de scan réseau et manipulation de données JSON'],
         techs: ['Power Apps', 'Power Automate', 'Nmap', 'JSON / Scripting'],
         color: 'green'
@@ -814,7 +809,7 @@
             <li><strong>Serveur Docker (192.168.100.10) :</strong> Hébergement des services réseau. Utilisation spécifique du <code>network_mode: host</code> dans Portainer pour permettre la diffusion des trames de broadcast DHCP au niveau de la couche liaison.</li>
             <li><strong>Services Réseau :</strong> Conteneurisation du serveur DHCP (<em>dnsmasq</em>) et du serveur DNS Forwarder (<em>CoreDNS</em>) pour isoler les rôles critiques.</li>
         </ul>`,
-        icon: `<img src="image_103502.png" class="h-full w-full object-contain p-4 drop-shadow-2xl">`,
+        icon: `<img src="image_103502.png" class="h-full w-full object-contain object-left-top p-6 opacity-90">`,
         tasks: ['Configuration du routage et NAT via iptables (iptables-persistent)', 'Déploiement Docker & Portainer avec gestion des volumes de persistance', 'Mise en place d\'un serveur DHCP (dnsmasq) conteneurisé', 'Configuration d\'un relais DNS (CoreDNS)'],
         techs: ['Debian 13', 'Docker', 'Portainer', 'iptables', 'dnsmasq', 'CoreDNS'],
         color: 'teal'
@@ -828,7 +823,7 @@
             <li><strong>Bascule automatique (Failover) :</strong> Utilisation de <em>Corosync</em> et <em>Pacemaker</em> entre les serveurs NOEUD1 (101) et NOEUD2 (102) pour gérer dynamiquement une <strong>Floating IP</strong> (192.168.100.104). Le service bascule instantanément en cas de défaillance matérielle.</li>
             <li><strong>Répartition de charge (Load Balancing) :</strong> Configuration d'un serveur <em>HAProxy</em> (192.168.100.103) utilisant l'algorithme "Round Robin" pour distribuer équitablement les requêtes HTTP et détecter proactivement les serveurs défaillants (health checks).</li>
         </ul>`,
-        icon: `<img src="image_10353f.png" class="h-full w-full object-contain p-4 drop-shadow-2xl">`,
+        icon: `<img src="image_10353f.png" class="h-full w-full object-contain object-left-top p-6 opacity-90">`,
         tasks: ['Création d\'un cluster actif/passif avec Corosync & Pacemaker', 'Gestion du réseau COEUR et bascule de la Floating IP', 'Configuration du Load Balancer HAProxy avec algorithme Round Robin', 'Déploiement et synchronisation de nœuds web Apache2'],
         techs: ['Corosync', 'Pacemaker', 'HAProxy', 'Debian 12', 'Apache2'],
         color: 'blue'
@@ -910,7 +905,7 @@
       content.innerHTML = `
         <div class="space-y-10">
           <div class="flex flex-col md:flex-row gap-12 items-start">
-            <div class="w-full md:w-56 h-56 flex items-center justify-center bg-white/5 rounded-[40px] border border-white/10 shadow-2xl overflow-hidden">
+            <div class="w-full md:w-56 h-56 bg-white/5 rounded-[40px] border border-white/10 shadow-2xl overflow-hidden relative">
                 ${p.icon}
             </div>
             <div class="flex-1">
