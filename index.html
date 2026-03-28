@@ -467,13 +467,24 @@
             <p class="text-gray-400 text-xl font-light">Scénarios pratiques et infrastructures déployées.</p>
           </header>
 
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="grid md:grid-cols-2 gap-8">
              
              <!-- P1: Low Code -->
              <div class="project-card card-hover rounded-[40px] overflow-hidden reveal group">
-               <div class="h-56 bg-[#0d0d14] p-8 relative overflow-hidden">
+               <div class="h-56 bg-[#0d0d14] flex items-center justify-center gap-8 relative overflow-hidden">
                  <div class="absolute inset-0 bg-green-500/5 group-hover:bg-green-500/10 transition-colors"></div>
-                 <img src="image_103485.png" alt="Inventaire Réseau Low-Code" class="h-full w-full object-contain object-left-top relative z-10 opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                 
+                 <!-- Logo SVG Power Apps -->
+                 <svg viewBox="0 0 100 100" class="w-20 h-20 relative z-10 transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_15px_rgba(168,85,247,0.5)]">
+                    <path d="M50 15 L85 50 L50 85 L15 50 Z" fill="none" stroke="#a855f7" stroke-width="8" stroke-linejoin="round"/>
+                    <path d="M50 35 L65 50 L50 65 L35 50 Z" fill="#a855f7" />
+                 </svg>
+                 
+                 <!-- Logo SVG Power Automate -->
+                 <svg viewBox="0 0 100 100" class="w-20 h-20 relative z-10 transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+                    <path d="M20 35 C 50 35, 50 65, 80 65" fill="none" stroke="#3b82f6" stroke-width="12" stroke-linecap="round"/>
+                    <path d="M65 50 L80 65 L65 80" fill="none" stroke="#3b82f6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+                 </svg>
                </div>
                <div class="p-10">
                  <h3 class="text-2xl font-bold mb-4 leading-tight">Inventaire Réseau Low-Code</h3>
@@ -484,27 +495,75 @@
 
              <!-- P2: Portainer & Routeur -->
              <div class="project-card card-hover rounded-[40px] overflow-hidden reveal group">
-                <div class="h-56 bg-[#0a0a0f] p-8 relative overflow-hidden">
+                <div class="h-56 bg-[#0a0a0f] flex items-center justify-center relative overflow-hidden">
                     <div class="absolute inset-0 bg-teal-500/5 group-hover:bg-teal-500/10 transition-colors"></div>
-                    <img src="image_103502.png" alt="Infrastructure Docker" class="h-full w-full object-contain object-left-top relative z-10 opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                    
+                    <!-- Logo SVG Docker -->
+                    <svg viewBox="0 0 120 100" class="w-28 h-28 relative z-10 transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_20px_rgba(14,165,233,0.4)]">
+                       <!-- Conteneurs -->
+                       <rect x="35" y="30" width="15" height="15" fill="#0ea5e9" rx="2"/>
+                       <rect x="55" y="30" width="15" height="15" fill="#0ea5e9" rx="2"/>
+                       <rect x="35" y="10" width="15" height="15" fill="#0ea5e9" rx="2"/>
+                       <rect x="75" y="30" width="15" height="15" fill="#0ea5e9" rx="2"/>
+                       <rect x="55" y="10" width="15" height="15" fill="#0ea5e9" rx="2"/>
+                       <!-- Baleine -->
+                       <path d="M10 60 C 10 90, 110 90, 110 60 C 110 50, 90 50, 90 50 L 90 47 L 30 47 C 10 47, 10 60, 10 60 Z" fill="#0ea5e9" />
+                       <circle cx="85" cy="55" r="3" fill="#0f172a" />
+                    </svg>
                 </div>
                 <div class="p-10">
                   <h3 class="text-2xl font-bold mb-4 leading-tight">Routeur & Infra Docker</h3>
-                  <p class="text-gray-400 text-sm mb-8 leading-relaxed">Déploiement sous Debian 13 d'un routeur NAT et de services DHCP/DNS conteneurisés via Docker.</p>
+                  <p class="text-gray-400 text-sm mb-8 leading-relaxed">Déploiement sous Debian 13 d'un routeur NAT et de services DHCP/DNS conteneurisés.</p>
                   <button onclick="openProjectModal(2)" class="w-full py-4 rounded-2xl bg-white text-black font-black hover:bg-teal-400 transition-colors">Détails du projet</button>
                 </div>
              </div>
 
              <!-- P3: Haute Disponibilité -->
              <div class="project-card card-hover rounded-[40px] overflow-hidden reveal group">
-                <div class="h-56 bg-[#0a0a0f] p-8 relative overflow-hidden">
+                <div class="h-56 bg-[#0a0a0f] flex items-center justify-center relative overflow-hidden">
                     <div class="absolute inset-0 bg-blue-500/5 group-hover:bg-blue-500/10 transition-colors"></div>
-                    <img src="image_10353f.png" alt="Cluster Haute Disponibilité" class="h-full w-full object-contain object-left-top relative z-10 opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                    
+                    <!-- Logo SVG Serveurs HA -->
+                    <svg viewBox="0 0 120 100" class="w-28 h-28 relative z-10 transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_20px_rgba(59,130,246,0.4)]">
+                       <rect x="15" y="20" width="30" height="60" rx="4" fill="none" stroke="#3b82f6" stroke-width="4"/>
+                       <line x1="15" y1="35" x2="45" y2="35" stroke="#3b82f6" stroke-width="4"/>
+                       <circle cx="30" cy="27" r="3" fill="#3b82f6"/>
+                       <rect x="75" y="20" width="30" height="60" rx="4" fill="none" stroke="#3b82f6" stroke-width="4"/>
+                       <line x1="75" y1="35" x2="105" y2="35" stroke="#3b82f6" stroke-width="4"/>
+                       <circle cx="90" cy="27" r="3" fill="#3b82f6"/>
+                       <path d="M 45 50 L 52 50 L 55 40 L 60 60 L 63 50 L 75 50" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                 </div>
                 <div class="p-10">
                   <h3 class="text-2xl font-bold mb-4 leading-tight">Cluster Haute Dispo (HA)</h3>
                   <p class="text-gray-400 text-sm mb-8 leading-relaxed">Mise en place de la tolérance aux pannes (Failover) et répartition de charge (Load Balancing).</p>
                   <button onclick="openProjectModal(3)" class="w-full py-4 rounded-2xl bg-white text-black font-black hover:bg-blue-400 transition-colors">Détails du projet</button>
+                </div>
+             </div>
+
+             <!-- P4: Audit & Cartographie Réseau (RETOUR DU PROJET !) -->
+             <div class="project-card card-hover rounded-[40px] overflow-hidden reveal group">
+                <div class="h-56 bg-[#0a0a0f] flex items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-orange-500/5 group-hover:bg-orange-500/10 transition-colors"></div>
+                    
+                    <!-- Logo SVG Réseau Topologie -->
+                    <svg viewBox="0 0 100 100" class="w-24 h-24 relative z-10 transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_20px_rgba(249,115,22,0.4)]">
+                       <line x1="50" y1="20" x2="20" y2="80" stroke="#f97316" stroke-width="4"/>
+                       <line x1="50" y1="20" x2="80" y2="80" stroke="#f97316" stroke-width="4"/>
+                       <line x1="20" y1="80" x2="80" y2="80" stroke="#f97316" stroke-width="4"/>
+                       <circle cx="50" cy="20" r="10" fill="#0f172a" stroke="#f97316" stroke-width="4"/>
+                       <circle cx="20" cy="80" r="10" fill="#0f172a" stroke="#f97316" stroke-width="4"/>
+                       <circle cx="80" cy="80" r="10" fill="#0f172a" stroke="#f97316" stroke-width="4"/>
+                       <circle cx="50" cy="50" r="6" fill="#f97316" />
+                       <line x1="50" y1="20" x2="50" y2="50" stroke="#f97316" stroke-width="4"/>
+                       <line x1="20" y1="80" x2="50" y2="50" stroke="#f97316" stroke-width="4"/>
+                       <line x1="80" y1="80" x2="50" y2="50" stroke="#f97316" stroke-width="4"/>
+                    </svg>
+                </div>
+                <div class="p-10">
+                  <h3 class="text-2xl font-bold mb-4 leading-tight">Audit & Cartographie</h3>
+                  <p class="text-gray-400 text-sm mb-8 leading-relaxed">Schématisation et audit de la topologie physique complexe du réseau FR0148 pour SLB.</p>
+                  <button onclick="openProjectModal(4)" class="w-full py-4 rounded-2xl bg-white text-black font-black hover:bg-orange-500 transition-colors">Détails du projet</button>
                 </div>
              </div>
 
@@ -793,8 +852,17 @@
         description: `Création d'une application permettant de scanner un réseau, d'identifier les machines actives et d'afficher leurs informations en croisant les technologies Microsoft et le scripting.<br><br>
         <strong class="text-white text-xl block mb-4">🚀 Architecture et Fonctionnement :</strong>
         <p class="text-gray-300 leading-relaxed mb-4">L'utilisateur saisit une plage IP dans <strong class="text-green-400">Power Apps</strong>, ce qui déclenche un flux <strong class="text-green-400">Power Automate</strong>. Ce flux appelle un script externe (exécutant <strong class="text-white">Nmap</strong>) pour scanner le réseau. Les résultats sont ensuite formatés en <strong class="text-white">JSON</strong> et renvoyés à l'application mobile pour affichage.</p>
-        <p class="text-gray-400 text-sm italic">Ce projet a nécessité de surmonter la complexité de communication entre l'environnement cloud de Power Automate et un script réseau local (Nmap), ouvrant la voie à de futures améliorations comme des alertes ou un historique des scans.</p>`,
-        icon: `<img src="image_103485.png" class="h-full w-full object-contain object-left-top p-6 opacity-90">`,
+        <p class="text-gray-400 text-sm italic">Ce projet a nécessité de surmonter la complexité de communication entre l'environnement cloud de Power Automate et un script réseau local (Nmap).</p>`,
+        icon: `<div class="flex gap-8 items-center justify-center w-full h-full bg-[#0d0d14] rounded-[40px] border border-white/5 shadow-inner">
+                 <svg viewBox="0 0 100 100" class="w-24 h-24 drop-shadow-[0_0_20px_rgba(168,85,247,0.6)]">
+                    <path d="M50 15 L85 50 L50 85 L15 50 Z" fill="none" stroke="#a855f7" stroke-width="8" stroke-linejoin="round"/>
+                    <path d="M50 35 L65 50 L50 65 L35 50 Z" fill="#a855f7" />
+                 </svg>
+                 <svg viewBox="0 0 100 100" class="w-24 h-24 drop-shadow-[0_0_20px_rgba(59,130,246,0.6)]">
+                    <path d="M20 35 C 50 35, 50 65, 80 65" fill="none" stroke="#3b82f6" stroke-width="12" stroke-linecap="round"/>
+                    <path d="M65 50 L80 65 L65 80" fill="none" stroke="#3b82f6" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+                 </svg>
+               </div>`,
         tasks: ['Architecture d\'un flux Utilisateur → Power Apps → Automate → Script Nmap → Résultats', 'Création de l\'interface utilisateur sur Power Apps', 'Déploiement de scripts de scan réseau et manipulation de données JSON'],
         techs: ['Power Apps', 'Power Automate', 'Nmap', 'JSON / Scripting'],
         color: 'green'
@@ -805,12 +873,18 @@
         description: `Conception d'une infrastructure réseau robuste et segmentée sous Debian 13, démontrant la maîtrise du modèle OSI et de l'Infrastructure As Code.<br><br>
         <strong class="text-white text-xl block mb-4">⚙️ Rôles et Architecture déployée :</strong>
         <ul class="list-disc pl-6 space-y-3 text-lg text-gray-300">
-            <li><strong>Routeur Linux (192.168.100.1) :</strong> Gestion de la passerelle vers Internet avec traduction d'adresses (NAT/Masquerade) via des règles strictes <em>iptables</em>.</li>
-            <li><strong>Serveur Docker (192.168.100.10) :</strong> Hébergement des services réseau. Utilisation spécifique du <code>network_mode: host</code> dans Portainer pour permettre la diffusion des trames de broadcast DHCP au niveau de la couche liaison.</li>
-            <li><strong>Services Réseau :</strong> Conteneurisation du serveur DHCP (<em>dnsmasq</em>) et du serveur DNS Forwarder (<em>CoreDNS</em>) pour isoler les rôles critiques.</li>
+            <li><strong>Routeur Linux :</strong> Gestion de la passerelle vers Internet avec traduction d'adresses (NAT/Masquerade) via des règles strictes <em>iptables</em>.</li>
+            <li><strong>Serveur Docker :</strong> Hébergement des services réseau. Utilisation du <code>network_mode: host</code> dans Portainer pour permettre la diffusion des trames de broadcast DHCP.</li>
+            <li><strong>Services Réseau :</strong> Conteneurisation du serveur DHCP (<em>dnsmasq</em>) et du relais DNS (<em>CoreDNS</em>).</li>
         </ul>`,
-        icon: `<img src="image_103502.png" class="h-full w-full object-contain object-left-top p-6 opacity-90">`,
-        tasks: ['Configuration du routage et NAT via iptables (iptables-persistent)', 'Déploiement Docker & Portainer avec gestion des volumes de persistance', 'Mise en place d\'un serveur DHCP (dnsmasq) conteneurisé', 'Configuration d\'un relais DNS (CoreDNS)'],
+        icon: `<div class="flex items-center justify-center w-full h-full bg-[#0a0a0f] rounded-[40px] border border-white/5 shadow-inner">
+                 <svg viewBox="0 0 120 100" class="w-32 h-32 drop-shadow-[0_0_20px_rgba(14,165,233,0.5)]">
+                    <rect x="35" y="30" width="15" height="15" fill="#0ea5e9" rx="2"/><rect x="55" y="30" width="15" height="15" fill="#0ea5e9" rx="2"/><rect x="35" y="10" width="15" height="15" fill="#0ea5e9" rx="2"/><rect x="75" y="30" width="15" height="15" fill="#0ea5e9" rx="2"/><rect x="55" y="10" width="15" height="15" fill="#0ea5e9" rx="2"/>
+                    <path d="M10 60 C 10 90, 110 90, 110 60 C 110 50, 90 50, 90 50 L 90 47 L 30 47 C 10 47, 10 60, 10 60 Z" fill="#0ea5e9" />
+                    <circle cx="85" cy="55" r="3" fill="#0f172a" />
+                 </svg>
+               </div>`,
+        tasks: ['Configuration du routage et NAT via iptables', 'Déploiement Docker & Portainer', 'Mise en place d\'un serveur DHCP (dnsmasq) conteneurisé', 'Configuration d\'un relais DNS (CoreDNS)'],
         techs: ['Debian 13', 'Docker', 'Portainer', 'iptables', 'dnsmasq', 'CoreDNS'],
         color: 'teal'
       },
@@ -820,13 +894,54 @@
         description: `Mise en œuvre de deux principes fondamentaux de continuité de service en entreprise pour une infrastructure Web (Apache2) sous Debian 12.<br><br>
         <strong class="text-white text-xl block mb-4">🛡️ Mécanismes implémentés :</strong>
         <ul class="list-disc pl-6 space-y-3 text-lg text-gray-300">
-            <li><strong>Bascule automatique (Failover) :</strong> Utilisation de <em>Corosync</em> et <em>Pacemaker</em> entre les serveurs NOEUD1 (101) et NOEUD2 (102) pour gérer dynamiquement une <strong>Floating IP</strong> (192.168.100.104). Le service bascule instantanément en cas de défaillance matérielle.</li>
-            <li><strong>Répartition de charge (Load Balancing) :</strong> Configuration d'un serveur <em>HAProxy</em> (192.168.100.103) utilisant l'algorithme "Round Robin" pour distribuer équitablement les requêtes HTTP et détecter proactivement les serveurs défaillants (health checks).</li>
+            <li><strong>Bascule automatique (Failover) :</strong> Utilisation de <em>Corosync</em> et <em>Pacemaker</em> pour gérer dynamiquement une <strong>Floating IP</strong>. Le service bascule instantanément en cas de défaillance matérielle.</li>
+            <li><strong>Répartition de charge (Load Balancing) :</strong> Configuration d'un serveur <em>HAProxy</em> utilisant l'algorithme "Round Robin" pour distribuer équitablement les requêtes HTTP.</li>
         </ul>`,
-        icon: `<img src="image_10353f.png" class="h-full w-full object-contain object-left-top p-6 opacity-90">`,
-        tasks: ['Création d\'un cluster actif/passif avec Corosync & Pacemaker', 'Gestion du réseau COEUR et bascule de la Floating IP', 'Configuration du Load Balancer HAProxy avec algorithme Round Robin', 'Déploiement et synchronisation de nœuds web Apache2'],
+        icon: `<div class="flex items-center justify-center w-full h-full bg-[#0a0a0f] rounded-[40px] border border-blue-500/20 shadow-inner">
+                 <svg viewBox="0 0 120 100" class="w-32 h-32 drop-shadow-[0_0_25px_rgba(59,130,246,0.6)]">
+                    <rect x="15" y="20" width="30" height="60" rx="4" fill="none" stroke="#3b82f6" stroke-width="4"/>
+                    <line x1="15" y1="35" x2="45" y2="35" stroke="#3b82f6" stroke-width="4"/><circle cx="30" cy="27" r="3" fill="#3b82f6"/>
+                    <rect x="75" y="20" width="30" height="60" rx="4" fill="none" stroke="#3b82f6" stroke-width="4"/>
+                    <line x1="75" y1="35" x2="105" y2="35" stroke="#3b82f6" stroke-width="4"/><circle cx="90" cy="27" r="3" fill="#3b82f6"/>
+                    <path d="M 45 50 L 52 50 L 55 40 L 60 60 L 63 50 L 75 50" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                 </svg>
+               </div>`,
+        tasks: ['Création d\'un cluster actif/passif avec Corosync & Pacemaker', 'Gestion du réseau COEUR et bascule de la Floating IP', 'Configuration du Load Balancer HAProxy', 'Déploiement et synchronisation de nœuds web Apache2'],
         techs: ['Corosync', 'Pacemaker', 'HAProxy', 'Debian 12', 'Apache2'],
         color: 'blue'
+      },
+      4: {
+        title: 'Audit & Cartographie Réseau',
+        category: 'Infrastructures / Audit',
+        description: `Dans le cadre de mon expérience chez SLB, j'ai réalisé un audit complet de l'infrastructure locale et créé une cartographie réseau détaillée du site (FR0148).<br><br>
+        
+        <strong class="text-white text-xl block mb-4">🔍 Contexte et Problématique :</strong>
+        <p class="text-gray-300 leading-relaxed mb-8">Face à une documentation technique vieillissante et incomplète, ce projet a été initié pour cartographier physiquement et logiquement l'ensemble des équipements (commutateurs, routeurs, serveurs). L'objectif : fournir une vision claire et à jour aux équipes IT Globales et sécuriser les futures interventions sur site.</p>
+        
+        <strong class="text-white text-xl block mb-4">📊 Méthodologie d'Audit :</strong>
+        <ul class="list-disc pl-6 space-y-3 text-lg text-gray-300 mb-8">
+            <li><strong>Inspection Physique :</strong> Relevé manuel et vérification du câblage directement dans les baies de brassage du site FR0148.</li>
+            <li><strong>Analyse Logique :</strong> Utilisation de commandes d'administration (protocoles de découverte CDP/LLDP, tables MAC) pour identifier les interconnexions réelles entre les Switchs Core, Distribution et Accès.</li>
+            <li><strong>Modélisation structurée :</strong> Transposition des données recueillies sur <strong>Draw.io</strong>, avec une séparation claire entre la topologie physique (liens matériels) et l'architecture logique (flux et routage).</li>
+        </ul>
+
+        <strong class="text-white text-xl block mb-4">💡 Apports et Optimisations :</strong>
+        <ul class="list-disc pl-6 space-y-3 text-lg text-gray-300">
+            <li><strong>Sécurisation des VLANs :</strong> Mise en évidence des réseaux virtuels existants et vérification de la bonne isolation des flux réseau.</li>
+            <li><strong>Prévention des Boucles (STP) :</strong> Analyse fine du maillage réseau pour garantir la bonne hiérarchie du protocole <em>Spanning Tree</em> et optimiser la redondance des liens critiques.</li>
+            <li><strong>Gestion IP :</strong> Restructuration documentaire du plan d'adressage IP local pour faciliter la gestion du DHCP et des IP fixes.</li>
+        </ul>`,
+        icon: `<div class="flex items-center justify-center w-full h-full bg-[#0a0a0f] rounded-[40px] border border-orange-500/20 shadow-inner">
+                 <svg viewBox="0 0 100 100" class="w-28 h-28 drop-shadow-[0_0_25px_rgba(249,115,22,0.6)]">
+                    <line x1="50" y1="20" x2="20" y2="80" stroke="#f97316" stroke-width="4"/><line x1="50" y1="20" x2="80" y2="80" stroke="#f97316" stroke-width="4"/><line x1="20" y1="80" x2="80" y2="80" stroke="#f97316" stroke-width="4"/>
+                    <circle cx="50" cy="20" r="10" fill="#0f172a" stroke="#f97316" stroke-width="4"/><circle cx="20" cy="80" r="10" fill="#0f172a" stroke="#f97316" stroke-width="4"/><circle cx="80" cy="80" r="10" fill="#0f172a" stroke="#f97316" stroke-width="4"/>
+                    <circle cx="50" cy="50" r="6" fill="#f97316" />
+                    <line x1="50" y1="20" x2="50" y2="50" stroke="#f97316" stroke-width="4"/><line x1="20" y1="80" x2="50" y2="50" stroke="#f97316" stroke-width="4"/><line x1="80" y1="80" x2="50" y2="50" stroke="#f97316" stroke-width="4"/>
+                 </svg>
+               </div>`,
+        tasks: ['Relevé des équipements physiques sur site', 'Schématisation de la topologie sur Draw.io', 'Documentation des VLANs et de l\'adressage IP', 'Analyse du maillage et de la redondance (STP)'],
+        techs: ['Draw.io', 'Audit', 'Topologie', 'VLAN'],
+        color: 'orange'
       }
     };
 
