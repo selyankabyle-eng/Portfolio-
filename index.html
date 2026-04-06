@@ -579,100 +579,250 @@
              <p class="text-gray-400 text-xl font-light italic">Thème : L'évolution du <strong>SD-WAN</strong> (2024-2026).</p>
            </header>
 
-           <div class="grid lg:grid-cols-12 gap-10 items-start">
+           <!-- Remplacement de la grille (côte à côte) par une disposition en colonne (l'un sous l'autre) -->
+           <div class="flex flex-col gap-16 w-full">
              
-             <!-- DOSSIER DÉTAILLÉ DE LA VEILLE (Gauche) -->
-             <div class="lg:col-span-7 space-y-6 reveal">
-               <div class="card-hover rounded-[40px] overflow-hidden flex flex-col h-[700px] border-green-500/20 bg-green-500/5 relative">
+             <!-- GRAND ARTICLE PROFESSIONNEL (Pleine largeur) -->
+             <div class="w-full space-y-6 reveal">
+               <div class="card-hover rounded-[40px] overflow-hidden flex flex-col h-[800px] border-green-500/20 bg-green-500/5 relative shadow-2xl">
                  <!-- Header fixe du dossier -->
-                 <div class="p-8 border-b border-green-500/10 bg-[#0d1310] sticky top-0 z-10">
-                   <h3 class="text-3xl font-black mb-2 text-white tracking-tight">Dossier de <span class="text-green-400 italic">Synthèse</span></h3>
-                   <p class="text-gray-400 text-sm">De la connectivité hybride à l'intelligence réseau autonome et post-quantique.</p>
+                 <div class="p-8 md:p-10 border-b border-green-500/20 bg-[#0d1310] sticky top-0 z-20 shadow-lg text-center">
+                   <span class="inline-block px-3 py-1 rounded-full bg-green-500/10 text-green-400 text-[10px] font-black uppercase tracking-widest mb-4">Livre Blanc • Architecture Réseau</span>
+                   <h3 class="text-3xl md:text-4xl font-black mb-2 text-white tracking-tight leading-tight">De la Connectivité Hybride à l'Intelligence Réseau Autonome et Post-Quantique</h3>
                  </div>
                  
-                 <!-- Contenu scrollable -->
-                 <div class="p-8 space-y-12 overflow-y-auto flex-1 scroll-smooth [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-green-500/20 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-green-500/40">
+                 <!-- Contenu scrollable (L'Article) -->
+                 <div class="p-8 md:p-10 overflow-y-auto flex-1 scroll-smooth [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-green-500/20 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-green-500/40 text-gray-300">
                    
-                   <!-- Intro / Présentation -->
-                   <div class="p-6 rounded-3xl bg-teal-500/10 border border-teal-500/20">
-                     <h4 class="text-lg font-bold text-white mb-3 flex items-center gap-3">
-                        <svg class="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Qu'est-ce que le SD-WAN ?
-                     </h4>
-                     <p class="text-gray-300 text-sm leading-relaxed text-justify">
-                        Le <strong>Software-Defined Wide Area Network</strong> est une architecture réseau qui virtualise le réseau étendu. Il repose sur un principe simple : la séparation du <strong>plan de contrôle</strong> (l'intelligence logicielle centralisée) et du <strong>plan de données</strong> (le matériel physique). Contrairement au routage traditionnel figé, le SD-WAN crée un réseau virtuel (Overlay) capable de router dynamiquement le trafic applicatif sur n'importe quelle liaison sous-jacente (Fibre, MPLS, 5G), garantissant ainsi performance, agilité et sécurité de bout en bout.
-                     </p>
-                   </div>
+                   <!-- Conteneur centré pour limiter la largeur du texte et faciliter la lecture -->
+                   <div class="max-w-5xl mx-auto space-y-14">
+                       
+                       <!-- Introduction avec Lettrine -->
+                       <div class="text-base md:text-lg leading-loose text-justify">
+                         <span class="float-left text-7xl font-black text-green-400 pr-4 leading-none mt-2">L</span>
+                         e paysage des infrastructures de réseaux étendus (WAN) traverse une métamorphose radicale, marquée par une transition définitive des architectures matérielles statiques vers des écosystèmes logiciels agiles, intelligents et intrinsèquement sécurisés. En 2026, le <strong>Software-Defined Wide Area Network (SD-WAN)</strong> ne se définit plus simplement comme une technologie de routage, mais comme le système nerveux central de l'entreprise numérique, orchestrant la connectivité entre les utilisateurs distribués, les charges de travail multicloud et les dispositifs de périphérie (Edge).
+                       </div>
 
-                   <!-- Frise Chronologique 2024-2026 -->
-                   <div>
-                     <h4 class="text-xl font-bold text-white mb-6">La chronologie de l'évolution (2024-2026)</h4>
-                     <div class="relative border-l-2 border-green-500/30 ml-4 pl-8 space-y-10">
+                       <!-- I. Fondements Techniques -->
+                       <article>
+                         <h4 class="text-2xl font-black text-white mb-6 flex items-center gap-3">
+                           <span class="text-green-400">I.</span> Fondements Techniques
+                         </h4>
+                         <p class="text-base leading-relaxed text-justify mb-6">
+                           Le SD-WAN repose sur le principe fondamental de la virtualisation des fonctions réseau, appliquant les concepts du Software-Defined Networking (SDN) aux réseaux étendus. Son architecture se distingue principalement par la désagrégation du plan de contrôle et du plan de données.
+                         </p>
                          
-                         <!-- 2024 -->
-                         <div class="relative">
-                             <div class="absolute -left-[41px] top-1 w-5 h-5 bg-teal-500 rounded-full border-4 border-[#0d1310] shadow-[0_0_10px_#14b8a6]"></div>
-                             <h5 class="text-lg font-bold text-teal-400 mb-2">2024 : L'Ère de l'Optimisation Applicative</h5>
-                             <p class="text-gray-400 text-sm leading-relaxed text-justify">
-                                 Le SD-WAN franchit le cap de l'agrégation de liens basique. Il devient capable d'identifier la signature des applications (DPI) pour prioriser le trafic critique (comme la VoIP) en temps réel. C'est le début de la réduction drastique de la dépendance aux liaisons MPLS coûteuses au profit de connexions Internet haut débit sécurisées. L'IA fait ses premières apparitions pour l'analyse des flux.
-                             </p>
+                         <div class="overflow-x-auto rounded-2xl border border-white/10 bg-black/40 mb-6 shadow-inner">
+                           <table class="w-full text-sm text-left">
+                             <thead class="text-xs uppercase text-gray-400 border-b border-white/10">
+                               <tr><th class="px-5 py-4">Composant</th><th class="px-5 py-4">Plan</th><th class="px-5 py-4">Rôle Principal</th></tr>
+                             </thead>
+                             <tbody class="divide-y divide-white/5">
+                               <tr class="hover:bg-white/5 transition-colors"><td class="px-5 py-4 font-bold text-white">Orchestrateur</td><td class="px-5 py-4 text-teal-400">Gestion</td><td class="px-5 py-4">Provisionnement, politique, dashboard unifié</td></tr>
+                               <tr class="hover:bg-white/5 transition-colors"><td class="px-5 py-4 font-bold text-white">Contrôleur</td><td class="px-5 py-4 text-teal-400">Contrôle</td><td class="px-5 py-4">Intelligence de routage, distribution des politiques</td></tr>
+                               <tr class="hover:bg-white/5 transition-colors"><td class="px-5 py-4 font-bold text-white">Dispositif Edge</td><td class="px-5 py-4 text-teal-400">Données</td><td class="px-5 py-4">Transfert de paquets, chiffrement, monitoring</td></tr>
+                             </tbody>
+                           </table>
                          </div>
+                       </article>
 
-                         <!-- 2025 -->
-                         <div class="relative">
-                             <div class="absolute -left-[41px] top-1 w-5 h-5 bg-lime-500 rounded-full border-4 border-[#0d1310] shadow-[0_0_10px_#84cc16]"></div>
-                             <h5 class="text-lg font-bold text-lime-400 mb-2">2025 : La Révolution SASE & ZTNA</h5>
-                             <p class="text-gray-400 text-sm leading-relaxed text-justify">
-                                 Le marché bascule vers le modèle "Single-Vendor SASE" (Secure Access Service Edge). Le réseau et la sécurité cloud fusionnent en une seule plateforme. Le concept de <strong>ZTNA (Zero Trust Network Access)</strong> est intégré nativement, remplaçant les VPN obsolètes. La sécurité ne se base plus sur le périmètre de l'entreprise, mais sur l'identité de l'utilisateur et la posture de sa machine, idéal pour le travail hybride.
-                             </p>
+                       <!-- II. ÉVOLUTION (Frise Chronologique) -->
+                       <article>
+                         <h4 class="text-2xl font-black text-white mb-8 flex items-center gap-3">
+                           <span class="text-green-400">II.</span> L'Évolution (2024-2026)
+                         </h4>
+                         <p class="text-base leading-relaxed text-justify mb-10">
+                           Au cours des deux dernières années, le SD-WAN a franchi une étape décisive, passant d'un outil d'optimisation de bande passante à une plateforme de services unifiée et intelligente (SD-WAN 3.0).
+                         </p>
+
+                         <!-- FRISE CHRONOLOGIQUE HORIZONTALE -->
+                         <div class="relative w-full overflow-x-auto pb-8 snap-x snap-mandatory custom-scrollbar [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:bg-white/5 [&::-webkit-scrollbar-thumb]:bg-green-500/30 [&::-webkit-scrollbar-thumb]:rounded-full">
+                           <div class="flex min-w-[900px] relative pt-6 pb-4">
+                               <!-- Ligne horizontale connectrice -->
+                               <div class="absolute top-[34px] left-[10%] right-[10%] h-1 bg-gradient-to-r from-teal-500/30 via-lime-500/30 to-green-500/30 rounded-full"></div>
+
+                               <!-- Point 1 : AIOps -->
+                               <div class="flex-1 relative px-4 text-center group snap-center">
+                                   <div class="w-6 h-6 mx-auto bg-[#0d1310] border-4 border-teal-500 rounded-full relative z-10 group-hover:scale-150 group-hover:bg-teal-500 transition-all duration-300 shadow-[0_0_15px_rgba(20,184,166,0.6)]"></div>
+                                   <div class="mt-6">
+                                       <span class="text-teal-400 font-bold tracking-widest text-[10px] uppercase block mb-1">Début 2024</span>
+                                       <h5 class="text-white font-bold text-base mb-3">Automatisation & AIOps</h5>
+                                       <p class="text-gray-400 text-xs leading-relaxed px-4">Émergence de l'IA pour l'analyse avancée et l'optimisation proactive des flux applicatifs.</p>
+                                   </div>
+                               </div>
+
+                               <!-- Point 2 : SASE -->
+                               <div class="flex-1 relative px-4 text-center group snap-center">
+                                   <div class="w-6 h-6 mx-auto bg-[#0d1310] border-4 border-teal-400 rounded-full relative z-10 group-hover:scale-150 group-hover:bg-teal-400 transition-all duration-300 shadow-[0_0_15px_rgba(45,212,191,0.6)]"></div>
+                                   <div class="mt-6">
+                                       <span class="text-teal-400 font-bold tracking-widest text-[10px] uppercase block mb-1">Mi-2025</span>
+                                       <h5 class="text-white font-bold text-base mb-3">Convergence SASE & ZTNA</h5>
+                                       <p class="text-gray-400 text-xs leading-relaxed px-4">Domination des plateformes unifiées fusionnant le routage réseau et la sécurité Zero Trust.</p>
+                                   </div>
+                               </div>
+
+                               <!-- Point 3 : 5G -->
+                               <div class="flex-1 relative px-4 text-center group snap-center">
+                                   <div class="w-6 h-6 mx-auto bg-[#0d1310] border-4 border-lime-500 rounded-full relative z-10 group-hover:scale-150 group-hover:bg-lime-500 transition-all duration-300 shadow-[0_0_15px_rgba(132,204,22,0.6)]"></div>
+                                   <div class="mt-6">
+                                       <span class="text-lime-400 font-bold tracking-widest text-[10px] uppercase block mb-1">Fin 2025</span>
+                                       <h5 class="text-white font-bold text-base mb-3">5G SA & Slicing</h5>
+                                       <p class="text-gray-400 text-xs leading-relaxed px-4">La 5G Standalone devient un transport primaire avec garantie de SLA via le Network Slicing.</p>
+                                   </div>
+                               </div>
+
+                               <!-- Point 4 : 2026 -->
+                               <div class="flex-1 relative px-4 text-center group snap-center">
+                                   <div class="w-6 h-6 mx-auto bg-[#0d1310] border-4 border-green-500 rounded-full relative z-10 animate-pulse group-hover:scale-150 group-hover:bg-green-500 transition-all duration-300 shadow-[0_0_15px_rgba(34,197,94,0.6)]"></div>
+                                   <div class="mt-6">
+                                       <span class="text-green-400 font-bold tracking-widest text-[10px] uppercase block mb-1">2026</span>
+                                       <h5 class="text-white font-bold text-base mb-3">Autonomie & Post-Quantique</h5>
+                                       <p class="text-gray-400 text-xs leading-relaxed px-4">Réseaux "No Human in the Loop" (IA Agentique) et sécurisation hybride PQC.</p>
+                                   </div>
+                               </div>
+                           </div>
                          </div>
+                       </article>
 
-                         <!-- 2026 -->
-                         <div class="relative">
-                             <!-- Point clignotant pour le présent -->
-                             <div class="absolute -left-[41px] top-1 w-5 h-5 bg-green-400 rounded-full border-4 border-[#0d1310] shadow-[0_0_10px_#22c55e] animate-pulse"></div>
-                             <h5 class="text-lg font-bold text-green-400 mb-2">2026 : Intelligence Autonome & 5G Slicing</h5>
-                             <p class="text-gray-400 text-sm leading-relaxed text-justify">
-                                 Le modèle de gestion devient "No Human in the Loop". Les systèmes <strong>AIOps</strong> anticipent les congestions et réparent le réseau de façon autonome. La <strong>5G Standalone</strong> s'impose comme transport primaire avec le <em>Network Slicing</em>, offrant des canaux garantis (URLLC) pour l'IoT critique. Enfin, face aux menaces futures, les leaders intègrent la <strong>cryptographie post-quantique hybride</strong> pour sécuriser les tunnels de données.
-                             </p>
+                       <!-- III. Convergence SASE et SSE -->
+                       <article>
+                         <h4 class="text-2xl font-black text-white mb-6 flex items-center gap-3">
+                           <span class="text-green-400">III.</span> Convergence Réseau & SASE
+                         </h4>
+                         <p class="text-base leading-relaxed text-justify mb-6">
+                           L'évolution la plus radicale est la fusion des silos réseau et sécurité. La tendance "Single-Vendor SASE" domine. Le <strong>ZTNA (Zero Trust Network Access)</strong> remplace le VPN traditionnel, éliminant le mouvement latéral des menaces au sein du réseau.
+                         </p>
+                         
+                         <blockquote class="p-8 border-l-4 border-green-400 bg-white/5 rounded-r-2xl italic text-gray-300 text-base md:text-lg my-8 shadow-inner">
+                           "En 2026, la sécurité ne se base plus sur le périmètre de l'entreprise, mais sur l'identité de l'utilisateur et la posture de sa machine, idéal pour le travail hybride."
+                         </blockquote>
+                       </article>
+
+                       <!-- IV. IA et AIOps -->
+                       <article>
+                         <h4 class="text-2xl font-black text-white mb-6 flex items-center gap-3">
+                           <span class="text-green-400">IV.</span> Intelligence IA & AIOps
+                         </h4>
+                         <p class="text-base leading-relaxed text-justify mb-8">
+                           La gestion tend vers le modèle <em>"No Human in the Loop"</em>. Les systèmes <strong>AIOps</strong> gèrent de manière autonome la détection des anomalies, la filtration des fausses alertes et l'auto-remédiation.
+                         </p>
+
+                         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6">
+                             <div class="p-6 rounded-2xl bg-green-500/10 border border-green-500/20 text-center shadow-inner hover:scale-105 transition-transform">
+                               <span class="block text-4xl font-black text-green-400 mb-2">-94%</span>
+                               <span class="text-xs text-gray-400 uppercase tracking-widest font-bold">Temps d'arrêt</span>
+                             </div>
+                             <div class="p-6 rounded-2xl bg-teal-500/10 border border-teal-500/20 text-center shadow-inner hover:scale-105 transition-transform">
+                               <span class="block text-4xl font-black text-teal-400 mb-2">+38%</span>
+                               <span class="text-xs text-gray-400 uppercase tracking-widest font-bold">Efficacité (Gestion)</span>
+                             </div>
+                             <div class="p-6 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-center shadow-inner hover:scale-105 transition-transform">
+                               <span class="block text-4xl font-black text-blue-400 mb-2">+50%</span>
+                               <span class="text-xs text-gray-400 uppercase tracking-widest font-bold">Vitesse (MTTR)</span>
+                             </div>
+                             <div class="p-6 rounded-2xl bg-purple-500/10 border border-purple-500/20 text-center shadow-inner hover:scale-105 transition-transform">
+                               <span class="block text-4xl font-black text-purple-400 mb-2">+167%</span>
+                               <span class="text-xs text-gray-400 uppercase tracking-widest font-bold">Bande passante</span>
+                             </div>
                          </div>
+                       </article>
+                       
+                       <!-- V. 5G et Network Slicing -->
+                       <article>
+                         <h4 class="text-2xl font-black text-white mb-6 flex items-center gap-3">
+                           <span class="text-green-400">V.</span> 5G Standalone & Network Slicing
+                         </h4>
+                         <p class="text-base leading-relaxed text-justify mb-6">
+                           La 5G n'est plus un simple accès de secours, mais un transport primaire haute performance. Le <strong>Network Slicing</strong> permet de partitionner physiquement un réseau 5G SA en plusieurs réseaux logiques indépendants (SLA garantis). Le SD-WAN agit comme l'intelligence applicative qui mappe le trafic vers la "tranche" appropriée (ex: URLLC pour la télé-chirurgie, eMBB pour les mises à jour).
+                         </p>
+                       </article>
 
-                     </div>
+                       <!-- VI. Analyse Economique MPLS vs Internet -->
+                       <article>
+                         <h4 class="text-2xl font-black text-white mb-6 flex items-center gap-3">
+                           <span class="text-green-400">VI.</span> Optimisation TCO : Fin du MPLS
+                         </h4>
+                         <p class="text-base leading-relaxed text-justify mb-6">
+                           Le modèle hybride devient le compromis stratégique : conserver le MPLS pour le trafic inter-DC critique, et décharger le trafic Cloud (SaaS) sur des liaisons Internet haut débit sécurisées par le SD-WAN.
+                         </p>
+                         
+                         <div class="overflow-x-auto rounded-2xl border border-white/10 bg-black/40 mb-6 shadow-inner">
+                           <table class="w-full text-sm text-left">
+                             <thead class="text-xs uppercase text-gray-400 border-b border-white/10">
+                               <tr><th class="px-5 py-4">Type de Liaison</th><th class="px-5 py-4">Coût Mensuel (1 Gbps)</th><th class="px-5 py-4">Caractéristiques</th></tr>
+                             </thead>
+                             <tbody class="divide-y divide-white/5">
+                               <tr class="hover:bg-white/5 transition-colors"><td class="px-5 py-4 font-bold text-orange-400">MPLS</td><td class="px-5 py-4 font-mono">~ 1 439 $</td><td class="px-5 py-4">SLA garantis, latence fixe, réseau privé</td></tr>
+                               <tr class="hover:bg-white/5 transition-colors"><td class="px-5 py-4 font-bold text-blue-400">Internet Dédié (DIA)</td><td class="px-5 py-4 font-mono">~ 966 $</td><td class="px-5 py-4">SLA garantis, performance similaire au MPLS</td></tr>
+                               <tr class="hover:bg-white/5 transition-colors"><td class="px-5 py-4 font-bold text-gray-400">Haut Débit Public</td><td class="px-5 py-4 font-mono">~ 307 $</td><td class="px-5 py-4">Pas de garantie de performance (Best-effort)</td></tr>
+                             </tbody>
+                           </table>
+                         </div>
+                       </article>
+
+                       <!-- VII et VIII. Conclusion -->
+                       <article>
+                         <h4 class="text-2xl font-black text-white mb-6 flex items-center gap-3">
+                           <span class="text-green-400">VII.</span> Conclusion & Sécurité Quantique
+                         </h4>
+                         <p class="text-base leading-relaxed text-justify mb-6">
+                           Pour anticiper la menace du <em>"Harvest Now, Decrypt Later"</em>, les leaders intègrent la <strong>cryptographie post-quantique (PQC)</strong>. Le SD-WAN est aujourd'hui le point de convergence de quatre technologies de rupture : l'AIOps, le SASE, la 5G SA et la sécurité Post-Quantique.
+                         </p>
+                         <p class="text-base leading-relaxed text-justify">
+                           À l'aube de l'ère 6G, le SD-WAN a achevé sa mue pour devenir le socle indispensable, autonome et résilient de toute stratégie de transformation numérique réussie pour la décennie à venir.
+                         </p>
+                       </article>
+
+                       <!-- SOURCES DE LA VEILLE -->
+                       <div class="pt-10 border-t border-white/10 mt-10">
+                         <h4 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-6 flex items-center justify-center md:justify-start gap-3">
+                           <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                           Sources & Bibliographie
+                         </h4>
+                         <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                           <span class="px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-sm font-bold text-gray-300 hover:bg-white/10 transition-colors shadow-sm flex items-center gap-3">
+                              <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z"/></svg>
+                              Google Alerts
+                           </span>
+                           <span class="px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-sm font-bold text-gray-300 hover:bg-white/10 transition-colors shadow-sm flex items-center gap-3">
+                              <svg class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                              KBT Training (YouTube)
+                           </span>
+                           <span class="px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-sm font-bold text-gray-300 hover:bg-white/10 transition-colors shadow-sm flex items-center gap-3">
+                              <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .883.175 1.188.465 1.16-.826 2.77-1.373 4.536-1.464l.889-4.161c.039-.182.203-.311.388-.311l3.053.642a1.245 1.245 0 0 1 1.173-.673zm-8.212 9.07c-.965 0-1.75.753-1.75 1.683 0 .93.785 1.683 1.75 1.683s1.75-.753 1.75-1.683c0-.93-.785-1.683-1.75-1.683zm6.402 0c-.965 0-1.75.753-1.75 1.683 0 .93.785 1.683 1.75 1.683s1.75-.753 1.75-1.683c0-.93-.785-1.683-1.75-1.683zm-3.203 4.398c-1.385 0-2.584-.528-2.584-.528a.326.326 0 0 1-.106-.445.326.326 0 0 1 .446-.106s1.08.473 2.244.473c1.165 0 2.245-.473 2.245-.473a.326.326 0 0 1 .445.106.326.326 0 0 1-.106.445s-1.199.528-2.584.528z"/></svg>
+                              Forums Reddit (r/networking)
+                           </span>
+                           <span class="px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-sm font-bold text-gray-300 hover:bg-white/10 transition-colors shadow-sm flex items-center gap-3">
+                              <svg class="w-5 h-5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                              Cisco Blog (Networking)
+                           </span>
+                           <span class="px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-sm font-bold text-gray-300 hover:bg-white/10 transition-colors shadow-sm flex items-center gap-3">
+                              <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                              Rapports Gouv (Cybersécurité)
+                           </span>
+                         </div>
+                       </div>
+
                    </div>
-
-                   <!-- Statistiques d'impact -->
-                   <div class="pt-4 border-t border-white/5">
-                     <h4 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4">L'impact de l'AIOps aujourd'hui</h4>
-                     <div class="grid grid-cols-2 gap-4">
-                         <div class="p-5 rounded-2xl bg-white/5 border border-white/5 shadow-inner">
-                           <span class="block text-3xl font-black text-green-400 mb-1 tracking-tighter">-94%</span>
-                           <span class="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Temps d'arrêt non planifié</span>
-                         </div>
-                         <div class="p-5 rounded-2xl bg-white/5 border border-white/5 shadow-inner">
-                           <span class="block text-3xl font-black text-teal-400 mb-1 tracking-tighter">+50%</span>
-                           <span class="text-[10px] text-gray-400 uppercase tracking-widest font-bold">Vitesse de résolution (MTTR)</span>
-                         </div>
-                     </div>
-                   </div>
-
                  </div>
                </div>
              </div>
 
-             <!-- FLUX RSS LIVE (Droite) -->
-             <div class="lg:col-span-5 reveal">
-               <div class="card-hover rounded-[40px] overflow-hidden flex flex-col h-[700px]">
-                 <div class="p-8 border-b border-white/5 flex items-center justify-between bg-white/5">
-                   <div class="flex items-center gap-3">
-                     <!-- Point lumineux Lime pour indiquer le Live -->
-                     <div class="w-3 h-3 bg-lime-500 rounded-full animate-pulse shadow-[0_0_10px_#84cc16]"></div>
-                     <h3 class="font-bold text-sm tracking-widest uppercase text-white">Live Actualités</h3>
+             <!-- FLUX RSS LIVE (Pleine largeur, format Grille) -->
+             <div class="w-full reveal">
+               <div class="card-hover rounded-[40px] overflow-hidden flex flex-col border border-white/10 bg-white/5 shadow-2xl">
+                 <div class="p-8 md:p-10 border-b border-white/5 flex items-center justify-between">
+                   <div class="flex items-center gap-4">
+                     <div class="w-4 h-4 bg-lime-500 rounded-full animate-pulse shadow-[0_0_15px_#84cc16]"></div>
+                     <h3 class="font-black text-xl md:text-2xl tracking-widest uppercase text-white">Live Actualités</h3>
                    </div>
-                   <button onclick="refreshRSS()" class="p-2 hover:bg-white/10 rounded-full transition-all group" title="Mettre à jour le flux">
+                   <button onclick="refreshRSS()" class="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full transition-all group flex items-center gap-3 font-bold text-sm" title="Mettre à jour le flux">
+                     Actualiser
                      <svg class="w-5 h-5 text-green-400 group-active:rotate-180 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
                    </button>
                  </div>
-                 <div id="rssContainer" class="p-8 space-y-8 overflow-y-auto flex-1 scroll-smooth [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-white/10 [&::-webkit-scrollbar-thumb]:rounded-full">
+                 <!-- Changement ici : Grille CSS pour afficher les cartes d'actus -->
+                 <div id="rssContainer" class="p-8 md:p-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6 transition-opacity duration-300">
                      <!-- Les articles vont s'injecter ici via JavaScript -->
                  </div>
                </div>
@@ -952,9 +1102,9 @@
       
       setTimeout(async () => {
         container.innerHTML = `
-            <div class="flex flex-col justify-center items-center h-full opacity-50 space-y-4">
-                <div class="w-10 h-10 border-4 border-green-400 border-t-transparent rounded-full animate-spin"></div>
-                <p class="text-xs uppercase tracking-widest font-bold text-green-400">Recherche d'actualités...</p>
+            <div class="col-span-full flex flex-col justify-center items-center py-20 opacity-50 space-y-4">
+                <div class="w-12 h-12 border-4 border-green-400 border-t-transparent rounded-full animate-spin"></div>
+                <p class="text-sm uppercase tracking-widest font-bold text-green-400">Recherche d'actualités en cours...</p>
             </div>`;
         container.style.opacity = '1';
 
@@ -965,19 +1115,22 @@
           if (data.status === 'ok' && data.items.length > 0) {
             container.style.opacity = '0';
             setTimeout(() => {
+                // Modification de la structure HTML des articles pour un affichage en grille
                 container.innerHTML = data.items.slice(0, 6).map(item => {
                   const date = new Date(item.pubDate).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
                   const cleanTitle = item.title.split(' - ')[0]; 
                   
                   return `
-                    <article class="rss-item pb-8 border-b border-white/5 last:border-0 hover:bg-white/5 p-4 rounded-2xl transition-all">
-                      <div class="flex items-center gap-3 mb-3 text-[10px] font-black uppercase tracking-widest">
-                        <span class="text-green-400">${item.source || 'Actualité Réseau'}</span>
-                        <span class="text-gray-500">${date}</span>
+                    <article class="flex flex-col justify-between h-full border border-white/5 bg-black/20 hover:bg-white/5 hover:border-green-500/30 p-8 rounded-3xl transition-all group">
+                      <div>
+                        <div class="flex items-center gap-3 mb-4 text-[10px] font-black uppercase tracking-widest">
+                          <span class="text-green-400 bg-green-500/10 px-3 py-1 rounded-full border border-green-500/20">${item.source || 'Actualité Réseau'}</span>
+                          <span class="text-gray-500">${date}</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-6 group-hover:text-green-400 transition-colors leading-snug">${cleanTitle}</h4>
                       </div>
-                      <a href="${item.link}" target="_blank" class="block group">
-                        <h4 class="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors leading-snug">${cleanTitle}</h4>
-                        <p class="text-sm text-green-400/50 flex items-center gap-2 font-medium opacity-0 group-hover:opacity-100 transition-opacity">Lire l'article <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></p>
+                      <a href="${item.link}" target="_blank" class="inline-flex items-center gap-2 text-sm text-gray-400 font-medium group-hover:text-green-400 transition-colors mt-auto pt-4 border-t border-white/5">
+                        Lire l'article complet <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                       </a>
                     </article>
                   `;
@@ -989,9 +1142,9 @@
           }
         } catch (error) {
           container.innerHTML = `
-            <div class="p-8 bg-red-500/10 border border-red-500/20 rounded-2xl text-center">
-                <p class="text-red-400 text-sm font-bold">Impossible de charger le flux en direct.</p>
-                <p class="text-gray-400 text-xs mt-2">Veuillez vérifier votre connexion internet ou réessayer plus tard.</p>
+            <div class="col-span-full p-10 bg-red-500/10 border border-red-500/20 rounded-3xl text-center">
+                <p class="text-red-400 text-lg font-bold">Impossible de charger le flux en direct.</p>
+                <p class="text-gray-400 text-sm mt-2">Veuillez vérifier votre connexion internet ou réessayer plus tard.</p>
             </div>`;
         }
       }, 300); 
